@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:vegetation_patch",
+  "config": {
+    "surface": "floor",
+    "depth": {
+      "type": "minecraft:uniform",
+      "min_inclusive": 1,
+      "max_inclusive": 3
+    },
+    "vertical_range": 3,
+    "extra_bottom_block_chance": 0.2,
+    "extra_edge_column_chance": 0.2,
+    "xz_radius": {
+      "type": "minecraft:uniform",
+      "min_inclusive": 1,
+      "max_inclusive": 2
+    },
+    "vegetation_chance": 0,
+    "replaceable": "#blazin-christmas-mod:withered_snow_tag",
+    "ground_state": {
+      "type": "simple_state_provider",
+      "state": {
+        "Name": "blazin-christmas-mod:fouled_snow"
+      }
+    },
+    "vegetation_feature": {
+      "feature": "blazin-christmas-mod:empty_block",
+      "placement": [
+        {
+          "type": "minecraft:heightmap",
+          "heightmap": "MOTION_BLOCKING"
+        }
+      ]
+    }
+  }
+}

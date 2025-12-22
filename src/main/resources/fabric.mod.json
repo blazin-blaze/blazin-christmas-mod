@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "blazin-christmas-mod",
+	"version": "${version}",
+	"name": "Blazin Christmas Mod",
+	"description": "Brings the festivities to Minecraft without breaking the vanilla experience.",
+	"authors": [
+		"BlazinBlaze"
+	],
+	"contact": {
+		"homepage": "https://www.blazinblaze.net",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "LGPL-3.0",
+	"icon": "icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.blazinblaze.BlazinChristmasMod"
+		],
+		"client": [
+			"net.blazinblaze.BlazinChristmasModClient"
+		],
+		"fabric-datagen": [
+			"net.blazinblaze.BlazinChristmasModDataGenerator"
+		]
+	},
+	"mixins": [
+		"blazin-christmas-mod.mixins.json",
+		{
+			"config": "blazin-christmas-mod.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.18.1",
+		"minecraft": "~1.21.8",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

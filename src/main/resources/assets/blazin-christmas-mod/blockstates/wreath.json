@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "blazin-christmas-mod:block/wreath",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "blazin-christmas-mod:block/wreath"
+    },
+    "facing=south": {
+      "model": "blazin-christmas-mod:block/wreath",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "blazin-christmas-mod:block/wreath",
+      "y": 270
+    }
+  }
+}

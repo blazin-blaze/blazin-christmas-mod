@@ -1,0 +1,7 @@
+{
+  "parent": "blazin-christmas-mod:block/snowball_patch",
+  "textures": {
+    "particle": "blazin-christmas-mod:block/snowball_patch_1",
+    "vine": "blazin-christmas-mod:block/snowball_patch_1"
+  }
+}

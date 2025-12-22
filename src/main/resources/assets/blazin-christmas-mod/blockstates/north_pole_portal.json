@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "blazin-christmas-mod:block/north_pole_portal_ns"
+    },
+    "axis=z": {
+      "model": "blazin-christmas-mod:block/north_pole_portal_ew"
+    }
+  }
+}

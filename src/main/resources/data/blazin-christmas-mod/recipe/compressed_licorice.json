@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "I": "blazin-christmas-mod:licorice_planks"
+  },
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "result": {
+    "count": 6,
+    "id": "blazin-christmas-mod:compressed_licorice"
+  }
+}

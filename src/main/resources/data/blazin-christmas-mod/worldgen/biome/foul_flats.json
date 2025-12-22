@@ -1,0 +1,60 @@
+{
+  "carvers": [],
+  "has_precipitation": true,
+  "temperature": -0.2,
+  "downfall": 0.8,
+  "spawners": {
+    "axolotls": [],
+    "creature": [
+      {
+        "type": "minecraft:wolf",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 1
+      },
+      {
+        "type": "minecraft:rabbit",
+        "maxCount": 3,
+        "minCount": 2,
+        "weight": 8
+      },
+      {
+        "type": "minecraft:polar_bear",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 1
+      }
+    ],
+    "misc": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "effects": {
+    "fog_color": 9868950,
+    "mood_sound": {
+      "block_search_extent": 8,
+      "offset": 2.0,
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000
+    },
+    "music_volume": 1.0,
+    "sky_color": 9868950,
+    "water_color": 9868950,
+    "water_fog_color": 9868950
+  },
+  "spawn_costs": {},
+  "temperature_modifier": "frozen",
+  "features": [
+    [],
+    [],
+    ["blazin-christmas-mod:fouled_snow_pile"],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    ["blazin-christmas-mod:licorice_tree"],
+    []
+  ]
+}

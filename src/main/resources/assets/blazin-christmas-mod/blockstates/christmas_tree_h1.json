@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "number_of_presents=0": {
+      "model": "blazin-christmas-mod:block/christmas_tree_half1_empty"
+    },
+    "number_of_presents=1": {
+      "model": "blazin-christmas-mod:block/christmas_tree_half1_p1"
+    },
+    "number_of_presents=2": {
+      "model": "blazin-christmas-mod:block/christmas_tree_half1_p2"
+    },
+    "number_of_presents=3": {
+      "model": "blazin-christmas-mod:block/christmas_tree_half1_p3"
+    },
+    "number_of_presents=4": {
+      "model": "blazin-christmas-mod:block/christmas_tree_half1_p4"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "open=false": {
+      "model": "blazin-christmas-mod:block/present_magenta_closed"
+    },
+    "open=true": {
+      "model": "blazin-christmas-mod:block/present_magenta_open"
+    }
+  }
+}

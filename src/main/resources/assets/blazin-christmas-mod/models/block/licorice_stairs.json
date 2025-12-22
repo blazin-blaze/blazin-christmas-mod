@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "blazin-christmas-mod:block/licorice_planks",
+    "side": "blazin-christmas-mod:block/licorice_planks",
+    "top": "blazin-christmas-mod:block/licorice_planks"
+  }
+}

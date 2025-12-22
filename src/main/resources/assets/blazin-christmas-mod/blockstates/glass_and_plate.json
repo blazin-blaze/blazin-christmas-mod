@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "blazin-christmas-mod:block/glass_and_plate",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "blazin-christmas-mod:block/glass_and_plate"
+    },
+    "facing=south": {
+      "model": "blazin-christmas-mod:block/glass_and_plate",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "blazin-christmas-mod:block/glass_and_plate",
+      "y": 270
+    }
+  }
+}

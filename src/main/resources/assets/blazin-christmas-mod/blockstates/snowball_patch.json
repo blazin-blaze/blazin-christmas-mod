@@ -1,0 +1,636 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_1"
+      },
+      "when": {
+        "north": "true",
+        "snowball_pos": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_1"
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "down": "false",
+        "snowball_pos": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_1",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "east": "true",
+        "snowball_pos": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_1",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "down": "false",
+        "snowball_pos": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_1",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "south": "true",
+        "snowball_pos": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_1",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "down": "false",
+        "snowball_pos": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_1",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "west": "true",
+        "snowball_pos": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_1",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "down": "false",
+        "snowball_pos": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_1",
+        "uvlock": true,
+        "x": 270
+      },
+      "when": {
+        "up": "true",
+        "snowball_pos": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_1",
+        "uvlock": true,
+        "x": 270
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "down": "false",
+        "snowball_pos": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_1",
+        "uvlock": true,
+        "x": 90
+      },
+      "when": {
+        "down": "true",
+        "snowball_pos": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_1",
+        "uvlock": true,
+        "x": 90
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "down": "false",
+        "snowball_pos": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_2"
+      },
+      "when": {
+        "north": "true",
+        "snowball_pos": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_2"
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "down": "false",
+        "snowball_pos": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_2",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "east": "true",
+        "snowball_pos": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_2",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "down": "false",
+        "snowball_pos": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_2",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "south": "true",
+        "snowball_pos": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_2",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "down": "false",
+        "snowball_pos": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_2",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "west": "true",
+        "snowball_pos": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_2",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "down": "false",
+        "snowball_pos": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_2",
+        "uvlock": true,
+        "x": 270
+      },
+      "when": {
+        "up": "true",
+        "snowball_pos": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_2",
+        "uvlock": true,
+        "x": 270
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "down": "false",
+        "snowball_pos": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_2",
+        "uvlock": true,
+        "x": 90
+      },
+      "when": {
+        "down": "true",
+        "snowball_pos": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_2",
+        "uvlock": true,
+        "x": 90
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "down": "false",
+        "snowball_pos": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_3"
+      },
+      "when": {
+        "north": "true",
+        "snowball_pos": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_3"
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "down": "false",
+        "snowball_pos": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_3",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "east": "true",
+        "snowball_pos": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_3",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "down": "false",
+        "snowball_pos": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_3",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "south": "true",
+        "snowball_pos": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_3",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "down": "false",
+        "snowball_pos": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_3",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "west": "true",
+        "snowball_pos": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_3",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "down": "false",
+        "snowball_pos": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_3",
+        "uvlock": true,
+        "x": 270
+      },
+      "when": {
+        "up": "true",
+        "snowball_pos": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_3",
+        "uvlock": true,
+        "x": 270
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "down": "false",
+        "snowball_pos": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_3",
+        "uvlock": true,
+        "x": 90
+      },
+      "when": {
+        "down": "true",
+        "snowball_pos": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_3",
+        "uvlock": true,
+        "x": 90
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "down": "false",
+        "snowball_pos": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_4"
+      },
+      "when": {
+        "north": "true",
+        "snowball_pos": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_4"
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "down": "false",
+        "snowball_pos": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_4",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "east": "true",
+        "snowball_pos": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_4",
+        "uvlock": true,
+        "y": 90
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "down": "false",
+        "snowball_pos": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_4",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "south": "true",
+        "snowball_pos": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_4",
+        "uvlock": true,
+        "y": 180
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "down": "false",
+        "snowball_pos": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_4",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "west": "true",
+        "snowball_pos": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_4",
+        "uvlock": true,
+        "y": 270
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "down": "false",
+        "snowball_pos": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_4",
+        "uvlock": true,
+        "x": 270
+      },
+      "when": {
+        "up": "true",
+        "snowball_pos": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_4",
+        "uvlock": true,
+        "x": 270
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "down": "false",
+        "snowball_pos": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_4",
+        "uvlock": true,
+        "x": 90
+      },
+      "when": {
+        "down": "true",
+        "snowball_pos": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/snowball_patch_4",
+        "uvlock": true,
+        "x": 90
+      },
+      "when": {
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false",
+        "down": "false",
+        "snowball_pos": "3"
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:forest_rock",
+  "config": {
+    "state": {
+      "Name": "blazin-christmas-mod:block_of_gingerbread"
+    }
+  }
+}

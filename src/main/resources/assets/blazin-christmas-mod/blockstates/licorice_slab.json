@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "blazin-christmas-mod:block/licorice_slab"
+    },
+    "type=double": {
+      "model": "blazin-christmas-mod:block/licorice_planks"
+    },
+    "type=top": {
+      "model": "blazin-christmas-mod:block/licorice_slab_top"
+    }
+  }
+}

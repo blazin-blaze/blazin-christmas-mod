@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "blazin-christmas-mod:licorice_planks",
+    "blazin-christmas-mod:licorice_planks",
+    "blazin-christmas-mod:licorice_planks"
+  ],
+  "result": {
+    "count": 6,
+    "id": "blazin-christmas-mod:licorice_slab"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "type": "blazin-christmas-mod:north_pole",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "blazin-christmas-mod:north_pole",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "blazin-christmas-mod:frigid_plains",
+          "parameters": {
+            "temperature": {
+              "min": -0.30,
+              "max": -0.10
+            },
+            "humidity": {
+              "min": -0.05,
+              "max": 0.15
+            },
+            "continentalness": {
+              "min": -0.05,
+              "max": 0.13
+            },
+            "erosion": {
+              "min": 0.45,
+              "max": 0.65
+            },
+            "weirdness": {
+              "min": 0.3,
+              "max": 0.7
+            },
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "blazin-christmas-mod:foul_flats",
+          "parameters": {
+            "temperature": {
+              "min": -0.45,
+              "max": -0.30
+            },
+            "humidity": {
+              "min": -0.35,
+              "max": -0.05
+            },
+            "continentalness": {
+              "min": -0.11,
+              "max": -0.05
+            },
+            "erosion": {
+              "min": 0.35,
+              "max": 0.45
+            },
+            "weirdness": {
+              "min": 0.2,
+              "max": 0.3
+            },
+            "depth": 0,
+            "offset": 0.25
+          }
+        },
+        {
+          "biome": "blazin-christmas-mod:candy_cane_forest",
+          "parameters": {
+            "temperature": {
+              "min": -0.15,
+              "max": 0.2
+            },
+            "humidity": {
+              "min": 0.1,
+              "max": 0.3
+            },
+            "continentalness": {
+              "min": 0.03,
+              "max": 0.3
+            },
+            "erosion": {
+              "min": 0.05,
+              "max": 0.45
+            },
+            "weirdness": {
+              "min": -1.0,
+              "max": -0.85
+            },
+            "depth": 0,
+            "offset": 0.1
+          }
+        }
+      ]
+    }
+  }
+}

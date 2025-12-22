@@ -1,0 +1,44 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/christmas_tree_half2_empty"
+      },
+      "when": {
+        "green_and_red": "false",
+        "white_and_blue": "false",
+        "silver_and_gold": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/christmas_tree_half2_gas"
+      },
+      "when": {
+        "green_and_red": "false",
+        "white_and_blue": "false",
+        "silver_and_gold": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/christmas_tree_half2_rag"
+      },
+      "when": {
+        "green_and_red": "true",
+        "white_and_blue": "false",
+        "silver_and_gold": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "blazin-christmas-mod:block/christmas_tree_half2_wab"
+      },
+      "when": {
+        "green_and_red": "false",
+        "white_and_blue": "true",
+        "silver_and_gold": "false"
+      }
+    }
+  ]
+}

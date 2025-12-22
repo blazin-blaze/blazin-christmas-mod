@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "blazin-christmas-mod:block/licorice_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "blazin-christmas-mod:block/licorice_log"
+    },
+    "axis=z": {
+      "model": "blazin-christmas-mod:block/licorice_log_horizontal",
+      "x": 90
+    }
+  }
+}

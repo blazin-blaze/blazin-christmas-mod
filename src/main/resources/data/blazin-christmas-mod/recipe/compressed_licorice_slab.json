@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "blazin-christmas-mod:compressed_licorice",
+    "blazin-christmas-mod:compressed_licorice",
+    "blazin-christmas-mod:compressed_licorice"
+  ],
+  "result": {
+    "count": 6,
+    "id": "blazin-christmas-mod:compressed_licorice_slab"
+  }
+}

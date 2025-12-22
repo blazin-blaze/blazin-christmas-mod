@@ -1,0 +1,7 @@
+{
+	"parent": "blazin-christmas-mod:block/present_white_closed",
+	"textures": {
+		"particle": "blazin-christmas-mod:block/present_brown_closed",
+		"0": "blazin-christmas-mod:block/present_brown_closed"
+	}
+}

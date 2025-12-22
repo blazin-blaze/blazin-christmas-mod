@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "blazin-christmas-mod:christmas_tree_h1"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "blazin-christmas-mod:blocks/christmas_tree_h1"
+}

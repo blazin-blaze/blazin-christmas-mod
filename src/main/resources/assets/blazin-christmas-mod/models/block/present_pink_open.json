@@ -1,0 +1,7 @@
+{
+	"parent": "blazin-christmas-mod:block/present_white_open",
+	"textures": {
+		"particle": "blazin-christmas-mod:block/present_pink_open",
+		"0": "blazin-christmas-mod:block/present_pink_open"
+	}
+}

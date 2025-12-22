@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": "minecraft:milk_bucket",
+    "R": "#minecraft:eggs",
+    "A": "minecraft:wheat",
+    "C": "minecraft:cocoa_beans",
+    "S": "minecraft:sugar",
+    "E": "minecraft:red_dye",
+    "G": "minecraft:green_dye"
+  },
+  "pattern": [
+    "III",
+    "SRC",
+    "GAE"
+  ],
+  "result": {
+    "count": 1,
+    "id": "blazin-christmas-mod:christmas_cake"
+  }
+}

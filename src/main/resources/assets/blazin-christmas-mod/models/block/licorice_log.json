@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "blazin-christmas-mod:block/licorice_log_top",
+    "side": "blazin-christmas-mod:block/licorice_log"
+  }
+}

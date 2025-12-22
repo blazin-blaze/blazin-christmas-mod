@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "blazin-christmas-mod:item/snowball_staff_withered"
+  }
+}

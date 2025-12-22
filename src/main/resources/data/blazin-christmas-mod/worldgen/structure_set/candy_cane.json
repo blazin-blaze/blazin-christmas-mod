@@ -1,0 +1,26 @@
+{
+  "structures": [
+    {
+      "structure": "blazin-christmas-mod:candy_canes/candy_cane_1",
+      "weight": 1
+    },
+    {
+      "structure": "blazin-christmas-mod:candy_canes/candy_cane_2",
+      "weight": 1
+    },
+    {
+      "structure": "blazin-christmas-mod:candy_canes/candy_cane_3",
+      "weight": 1
+    },
+    {
+      "structure": "blazin-christmas-mod:candy_canes/candy_cane_4",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 2,
+    "separation": 0,
+    "salt": 21774916
+  }
+}

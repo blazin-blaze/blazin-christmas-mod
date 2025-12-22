@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "I": "minecraft:spruce_leaves",
+    "R": "minecraft:red_wool"
+  },
+  "pattern": [
+    " I ",
+    "IRI",
+    " I "
+  ],
+  "result": {
+    "count": 1,
+    "id": "blazin-christmas-mod:wreath"
+  }
+}

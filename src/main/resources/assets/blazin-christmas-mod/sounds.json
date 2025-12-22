@@ -1,0 +1,18 @@
+{
+  "entity-santa_villager-ambient": {
+    "subtitle": "sound.blazin-christmas-mod.entity-santa_villager-ambient",
+    "sounds": [
+      "blazin-christmas-mod:mob/santa_villager/santa_villager_ambience1",
+      "blazin-christmas-mod:mob/santa_villager/santa_villager_ambience2",
+      "blazin-christmas-mod:mob/santa_villager/santa_villager_ambience3"
+    ]
+  },
+  "entity-evil_santa_villager-ambient": {
+    "subtitle": "sound.blazin-christmas-mod.entity-evil_santa_villager-ambient",
+    "sounds": [
+      "blazin-christmas-mod:mob/evil_santa_villager/evil_santa_ambience1",
+      "blazin-christmas-mod:mob/evil_santa_villager/evil_santa_ambience2",
+      "blazin-christmas-mod:mob/evil_santa_villager/evil_santa_ambience3"
+    ]
+  }
+}

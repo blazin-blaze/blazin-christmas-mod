@@ -1,0 +1,21 @@
+{
+	"required": true,
+	"package": "net.blazinblaze.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"SnowballFightTaskMixin",
+		"SnowballPatchSpawn",
+		"VillagerBrainMixin",
+		"SnowEverywhereMixin",
+      	"AddCustomEntitiesMixin",
+		"SnowballHurtSound",
+		"GlassBottleItem",
+		"ForestRockMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

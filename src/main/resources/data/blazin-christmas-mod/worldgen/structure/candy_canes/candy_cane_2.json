@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:jigsaw",
+  "biomes": [
+    "blazin-christmas-mod:candy_cane_forest"
+  ],
+  "step": "vegetal_decoration",
+  "terrain_adaptation": "beard_thin",
+  "spawn_overrides": {},
+  "start_pool": "blazin-christmas-mod:candy_cane",
+  "size": 1,
+  "start_height": {
+    "absolute": 1
+  },
+  "project_start_to_heightmap": "MOTION_BLOCKING",
+  "max_distance_from_center": 1,
+  "use_expansion_hack": false
+}

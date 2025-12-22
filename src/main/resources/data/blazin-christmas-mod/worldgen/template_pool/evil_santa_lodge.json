@@ -1,0 +1,16 @@
+{
+  "name": "blazin-christmas-mod:evil_santa_lodge",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "blazin-christmas-mod:evil_santa_lodge",
+        "processors": "minecraft:empty",
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    }
+  ]
+}

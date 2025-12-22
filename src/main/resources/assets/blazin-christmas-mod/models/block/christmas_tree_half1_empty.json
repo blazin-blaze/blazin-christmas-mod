@@ -1,0 +1,75 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 64],
+	"textures": {
+		"5": "blazin-christmas-mod:block/christmas_tree_gold_and_silver",
+		"particle": "blazin-christmas-mod:block/spruce_leaves_edited"
+	},
+	"elements": [
+		{
+			"from": [6, 0.5, 6],
+			"to": [10, 16.5, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 0, 7]},
+			"faces": {
+				"north": {"uv": [4, 6.5, 5, 13.25], "texture": "#5"},
+				"east": {"uv": [4, 6.5, 5, 13.25], "texture": "#5"},
+				"south": {"uv": [4, 6.5, 5, 13.25], "texture": "#5"},
+				"west": {"uv": [4, 6.5, 5, 13.25], "texture": "#5"},
+				"up": {"uv": [8.5, 1, 7.5, 0], "texture": "#5"},
+				"down": {"uv": [8.5, 0, 7.5, 1], "texture": "#5"}
+			}
+		},
+		{
+			"from": [0, 14, 0],
+			"to": [16, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 2, 7]},
+			"faces": {
+				"north": {"uv": [7, 5, 11, 5.5], "texture": "#5"},
+				"east": {"uv": [7, 5, 11, 5.5], "texture": "#5"},
+				"south": {"uv": [7, 5, 11, 5.5], "texture": "#5"},
+				"west": {"uv": [7, 5, 11, 5.5], "texture": "#5"},
+				"up": {"uv": [4, 4, 0, 0], "texture": "#5"},
+				"down": {"uv": [4, 0, 0, 4], "texture": "#5"}
+			}
+		},
+		{
+			"from": [0, 0, 0],
+			"to": [16, 0.6, 16],
+			"faces": {
+				"north": {"uv": [7.5, 1.5, 11.5, 1.75], "texture": "#5"},
+				"east": {"uv": [7.5, 1.5, 11.5, 1.75], "texture": "#5"},
+				"south": {"uv": [7.5, 1.5, 11.5, 1.75], "texture": "#5"},
+				"west": {"uv": [7.5, 1.5, 11.5, 1.75], "texture": "#5"},
+				"up": {"uv": [4, 8, 0, 4], "texture": "#5"},
+				"down": {"uv": [4, 4, 0, 8], "texture": "#5"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "tree",
+			"origin": [7, 16, 7],
+			"color": 0,
+			"children": [0, 1]
+		},
+		{
+			"name": "carpet",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [2]
+		},
+		{
+			"name": "ornaments",
+			"origin": [-1, 17, 2],
+			"color": 0,
+			"children": []
+		},
+		{
+			"name": "presents",
+			"origin": [2, 0.5, 2],
+			"color": 0,
+			"children": []
+		}
+	]
+}

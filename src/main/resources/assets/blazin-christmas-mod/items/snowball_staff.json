@@ -1,0 +1,133 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "cases": [
+      {
+        "model": {
+          "type": "minecraft:select",
+          "cases": [
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "blazin-christmas-mod:item/snowball_staff_normal"
+              },
+              "when": true
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "blazin-christmas-mod:item/snowball_staff_empty_normal"
+              },
+              "when": false
+            }
+          ],
+          "property": "minecraft:component",
+          "component": "blazin-christmas-mod:is_snowball_loaded"
+        },
+        "when": "normal"
+      },
+      {
+        "model": {
+          "type": "minecraft:select",
+          "cases": [
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "blazin-christmas-mod:item/snowball_staff_candy_cane"
+              },
+              "when": true
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "blazin-christmas-mod:item/snowball_staff_empty_candy_cane"
+              },
+              "when": false
+            }
+          ],
+          "property": "minecraft:component",
+          "component": "blazin-christmas-mod:is_snowball_loaded"
+        },
+        "when": "candy_cane"
+      },
+      {
+        "model": {
+          "type": "minecraft:select",
+          "cases": [
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "blazin-christmas-mod:item/snowball_staff_withered"
+              },
+              "when": true
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "blazin-christmas-mod:item/snowball_staff_empty_withered"
+              },
+              "when": false
+            }
+          ],
+          "property": "minecraft:component",
+          "component": "blazin-christmas-mod:is_snowball_loaded"
+        },
+        "when": "withered"
+      },
+      {
+        "model": {
+          "type": "minecraft:select",
+          "cases": [
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "blazin-christmas-mod:item/snowball_staff_fiery"
+              },
+              "when": true
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "blazin-christmas-mod:item/snowball_staff_empty_fiery"
+              },
+              "when": false
+            }
+          ],
+          "property": "minecraft:component",
+          "component": "blazin-christmas-mod:is_snowball_loaded"
+        },
+        "when": "fiery"
+      },
+      {
+        "model": {
+          "type": "minecraft:select",
+          "cases": [
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "blazin-christmas-mod:item/snowball_staff_ethereal"
+              },
+              "when": true
+            },
+            {
+              "model": {
+                "type": "minecraft:model",
+                "model": "blazin-christmas-mod:item/snowball_staff_empty_ethereal"
+              },
+              "when": false
+            }
+          ],
+          "property": "minecraft:component",
+          "component": "blazin-christmas-mod:is_snowball_loaded"
+        },
+        "when": "ethereal"
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/snowball_staff_normal"
+    },
+    "property": "minecraft:component",
+    "component": "blazin-christmas-mod:snowball_staff_type"
+  }
+}

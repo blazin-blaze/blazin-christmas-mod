@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:glass_bottle",
+    "blazin-christmas-mod:egg_nog_bucket"
+  ],
+  "result": {
+    "count": 1,
+    "id": "blazin-christmas-mod:glass_of_egg_nog"
+  }
+}

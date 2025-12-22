@@ -1,0 +1,85 @@
+package net.blazinblaze.screen;
+
+import net.blazinblaze.BlazinChristmasMod;
+import net.blazinblaze.misc.PresentSlot;
+import net.minecraft.world.Container;
+import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.ItemStack;
+import org.jetbrains.annotations.Nullable;
+
+public class ChristmasTreeHandler extends AbstractContainerMenu {
+    private final Container inventory;
+
+    public ChristmasTreeHandler(int syncId, Inventory playerInventory) {
+        this(syncId, playerInventory, new SimpleContainer(4));
+    }
+
+    public ChristmasTreeHandler(int syncId, Inventory playerInventory, Container inventory) {
+        super(BlazinChristmasMod.CHRISTMAS_TREE_HANDLER, syncId);
+        checkContainerSize(inventory, 4);
+        this.inventory = inventory;
+        inventory.startOpen(playerInventory.player);
+
+        int m;
+        int l;
+
+        this.addSlot(new PresentSlot(inventory, 0, 41 , 54));
+        this.addSlot(new PresentSlot(inventory, 1, 64, 72));
+        this.addSlot(new PresentSlot(inventory, 2, 96, 72));
+        this.addSlot(new PresentSlot(inventory, 3, 119, 54));
+
+        for (m = 0; m < 3; ++m) {
+            for (l = 0; l < 9; ++l) {
+                this.addSlot(new Slot(playerInventory, l + m * 9 + 9, 8 + l * 18, 96 + m * 18));
+            }
+        }
+
+        for (m = 0; m < 9; ++m) {
+            this.addSlot(new Slot(playerInventory, m, 8 + m * 18, 154));
+        }
+    }
+
+    @Override
+    public boolean stillValid(Player player) {
+        return this.inventory.stillValid(player);
+    }
+
+    @Override
+    public ItemStack quickMoveStack(Player player, int invSlot) {
+        ItemStack newStack = ItemStack.EMPTY;
+        Slot slot = this.slots.get(invSlot);
+        if (slot != null && slot.hasItem()) {
+            ItemStack originalStack = slot.getItem();
+            newStack = originalStack.copy();
+            if (invSlot < this.inventory.getContainerSize()) {
+                if (!this.moveItemStackTo(originalStack, this.inventory.getContainerSize(), this.slots.size(), true)) {
+                    return ItemStack.EMPTY;
+                }
+            } else if (!this.moveItemStackTo(originalStack, 0, this.inventory.getContainerSize(), false)) {
+                return ItemStack.EMPTY;
+            }
+
+            if (originalStack.isEmpty()) {
+                slot.setByPlayer(ItemStack.EMPTY);
+            } else {
+                slot.setChanged();
+            }
+        }
+
+        return newStack;
+    }
+
+    public Container getInventory() {
+        return this.inventory;
+    }
+
+    @Override
+    public void removed(Player player) {
+        super.removed(player);
+        this.inventory.stopOpen(player);
+    }
+}

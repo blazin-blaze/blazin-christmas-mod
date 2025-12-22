@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "blazin-christmas-mod:item/red_green_ornament"
+  }
+}
