@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "blazin-christmas-mod:ethereal_snowball",
+    "blazin-christmas-mod:ethereal_snowball",
+    "blazin-christmas-mod:ethereal_snowball",
+    "blazin-christmas-mod:ethereal_snowball"
+  ],
+  "result": {
+    "count": 1,
+    "id": "blazin-christmas-mod:ethereal_snow"
+  }
+}

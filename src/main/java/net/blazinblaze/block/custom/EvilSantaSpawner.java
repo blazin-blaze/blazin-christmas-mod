@@ -1,8 +1,10 @@
 package net.blazinblaze.block.custom;
 
+import net.blazinblaze.advancement.BCMCriteria;
 import net.blazinblaze.entity.BCMEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.player.Player;
@@ -11,6 +13,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+
+import java.util.List;
 
 public class EvilSantaSpawner extends Block {
     public EvilSantaSpawner(Properties settings) {
@@ -21,6 +25,9 @@ public class EvilSantaSpawner extends Block {
     public BlockState playerWillDestroy(Level world, BlockPos pos, BlockState state, Player player) {
         if(world instanceof ServerLevel serverWorld) {
             BCMEntities.EVIL_SANTA_VILLAGER.spawn(serverWorld, pos, EntitySpawnReason.MOB_SUMMONED);
+            for(ServerPlayer serverPlayer : serverWorld.getPlayers((serverPlayer1) -> true)) {
+                BCMCriteria.SPAWNED_EVIL_SANTA.trigger(serverPlayer);
+            }
         }
         return super.playerWillDestroy(world, pos, state, player);
     }
@@ -30,6 +37,9 @@ public class EvilSantaSpawner extends Block {
         if(player.isShiftKeyDown()) {
             if(world instanceof ServerLevel serverWorld) {
                 BCMEntities.EVIL_SANTA_VILLAGER.spawn(serverWorld, pos, EntitySpawnReason.MOB_SUMMONED);
+                for(ServerPlayer serverPlayer : serverWorld.getPlayers((serverPlayer1) -> true)) {
+                    BCMCriteria.SPAWNED_EVIL_SANTA.trigger(serverPlayer);
+                }
                 serverWorld.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState());
                 return InteractionResult.SUCCESS;
             }

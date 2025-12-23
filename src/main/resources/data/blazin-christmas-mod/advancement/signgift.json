@@ -1,0 +1,22 @@
+{
+  "parent": "blazin-christmas-mod:christmasmod",
+  "criteria": {
+    "sign_gift_criterion": {
+      "trigger": "blazin-christmas-mod:sign_gift_criterion"
+    }
+  },
+  "display": {
+    "description": "Sign a Gift",
+    "icon": {
+      "count": 1,
+      "id": "blazin-christmas-mod:red_present"
+    },
+    "title": "Christmas Consumerism"
+  },
+  "requirements": [
+    [
+      "sign_gift_criterion"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

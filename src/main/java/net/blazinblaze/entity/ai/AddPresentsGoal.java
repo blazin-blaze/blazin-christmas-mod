@@ -1,5 +1,6 @@
 package net.blazinblaze.entity.ai;
 
+import net.blazinblaze.advancement.BCMCriteria;
 import net.blazinblaze.block.BCMBlocks;
 import net.blazinblaze.block.custom.ChristmasTreeBlockEntity;
 import net.blazinblaze.block.custom.PresentBlockEntity;
@@ -11,6 +12,7 @@ import net.minecraft.core.SectionPos;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.PathfinderMob;
@@ -78,6 +80,9 @@ public class AddPresentsGoal extends MoveToBlockGoal {
                     serverLevel.sendParticles(new ItemParticleOption(ParticleTypes.ITEM, randomPresent.getItem().getDefaultInstance().copy()), blockPos2.getX(), blockPos2.getY(), blockPos2.getZ(), 6, 0,0,0, 0.5F);
                     serverLevel.playSound(this.santaVillager, blockPos, SoundEvents.ITEM_PICKUP, SoundSource.AMBIENT, 1.0F, 1.0F);
                     this.santaVillager.setCookiesEaten(this.santaVillager.getCookiesEaten() - 1);
+                    for(ServerPlayer serverPlayer : serverLevel.getPlayers((serverPlayer1) -> true)) {
+                        BCMCriteria.GIFTED_SANTA.trigger(serverPlayer);
+                    }
                 }
             }
         }

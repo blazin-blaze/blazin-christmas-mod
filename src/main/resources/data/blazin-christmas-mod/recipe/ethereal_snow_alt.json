@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "W": "minecraft:snow_block",
+    "C": "blazin-christmas-mod:snowflake"
+  },
+  "pattern": [
+    "WCW",
+    "CCC",
+    "WCW"
+  ],
+  "result": {
+    "count": 1,
+    "id": "blazin-christmas-mod:ethereal_snow"
+  }
+}

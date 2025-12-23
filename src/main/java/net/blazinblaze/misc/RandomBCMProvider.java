@@ -22,6 +22,7 @@ import net.minecraft.world.item.alchemy.PotionContents;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.level.block.Block;
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -99,6 +100,13 @@ public class RandomBCMProvider {
             "candy_cane"
     );
 
+    private static final List<Block> possibleFestiveHeads = List.of(BCMBlocks.SNOWMAN_HEAD, BCMBlocks.SANTA_HEAD, BCMBlocks.GINGERBREAD_HEAD,
+            BCMBlocks.SNOWMAN_HEAD, BCMBlocks.SANTA_HEAD, BCMBlocks.GINGERBREAD_HEAD,
+            BCMBlocks.SNOWMAN_HEAD, BCMBlocks.SANTA_HEAD, BCMBlocks.GINGERBREAD_HEAD,
+            BCMBlocks.SNOWMAN_HEAD, BCMBlocks.SANTA_HEAD, BCMBlocks.GINGERBREAD_HEAD,
+            BCMBlocks.SNOWMAN_HEAD, BCMBlocks.SANTA_HEAD, BCMBlocks.GINGERBREAD_HEAD,
+            BCMBlocks.SNOWMAN_HEAD, BCMBlocks.SANTA_HEAD, BCMBlocks.GINGERBREAD_HEAD);
+
     private static final List<Holder<Potion>> possiblePotions = List.of(Potions.HARMING, Potions.FIRE_RESISTANCE, Potions.LONG_FIRE_RESISTANCE, Potions.HEALING, Potions.INFESTED, Potions.INVISIBILITY, Potions.LEAPING, Potions.LONG_LEAPING,
             Potions.LONG_INVISIBILITY, Potions.WIND_CHARGED, Potions.WEAVING, Potions.WEAKNESS, Potions.WATER_BREATHING, Potions.TURTLE_MASTER, Potions.SWIFTNESS, Potions.STRONG_TURTLE_MASTER, Potions.STRONG_SWIFTNESS, Potions.STRONG_STRENGTH,
             Potions.STRONG_SLOWNESS, Potions.STRONG_REGENERATION, Potions.STRONG_POISON, Potions.STRONG_LEAPING, Potions.STRONG_HEALING, Potions.STRONG_HARMING, Potions.STRENGTH, Potions.SLOWNESS, Potions.SLOW_FALLING, Potions.REGENERATION,
@@ -161,7 +169,7 @@ public class RandomBCMProvider {
     public static void createRandomSnowballSpiral(LivingEntity entity, ServerLevel serverLevel, double d, double e, double g, double h, boolean allowWaterSnow) {
         String key = getRandomKey(new Random());
 
-        for(int i = 0; i < 44; i++) {
+        for(int i = 0; i < 30; i++) {
             int delta = i*5;
             if(key.matches("fiery")) {
                 ItemStack itemStack = new ItemStack(BCMItems.FIERY_SNOWBALL);
@@ -169,9 +177,9 @@ public class RandomBCMProvider {
                         new FierySnowballEntity(serverLevel, entity, itemStack), serverLevel, itemStack, snowball -> snowball.shoot(Mth.sin((float)d - delta), e + h - snowball.getY(), Mth.sin((float)g - delta), 1.5F, 12.0F)
                 );
             }else if(key.matches("withered")) {
-                ItemStack itemStack = new ItemStack(BCMItems.WITHERED_SNOWBALL);
+                ItemStack itemStack = new ItemStack(BCMItems.CANDY_CANE_SNOWBALL);
                 Projectile.spawnProjectile(
-                        new WitheredSnowballEntity(serverLevel, entity, itemStack), serverLevel, itemStack, snowball -> snowball.shoot(Mth.sin((float)d - delta), e + h - snowball.getY(), Mth.sin((float)g - delta), 1.5F, 12.0F)
+                        new CandyCaneSnowballEntity(serverLevel, entity, itemStack), serverLevel, itemStack, snowball -> snowball.shoot(Mth.sin((float)d - delta), e + h - snowball.getY(), Mth.sin((float)g - delta), 1.5F, 12.0F)
                 );
             }else if(key.matches("candy_cane")) {
                 ItemStack itemStack = new ItemStack(BCMItems.CANDY_CANE_SNOWBALL);
@@ -354,6 +362,11 @@ public class RandomBCMProvider {
         temp.set(DataComponents.CONTAINER, ItemContainerContents.fromItems(addedItems));
         temp.set(BCMComponents.PRESENT_SIGNER, "Santa");
         return temp;
+    }
+
+    public static Block getRandomFestiveHead() {
+        Random random = new Random();
+        return possibleFestiveHeads.get(random.nextInt(0, possibleFestiveHeads.size()));
     }
 
     record ItemRarity(double threshold, boolean multiple, boolean isEnchantable, String enchantableType) {}

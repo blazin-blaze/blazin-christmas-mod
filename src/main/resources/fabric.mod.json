@@ -9,7 +9,7 @@
 	],
 	"contact": {
 		"homepage": "https://www.blazinblaze.net",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/blazin-blaze/blazin-christmas-mod"
 	},
 	"license": "LGPL-3.0",
 	"icon": "icon.png",

@@ -25,6 +25,14 @@
         "weight": 1
       }
     ],
+    "monster": [
+      {
+        "type": "blazin-christmas-mod:gingerbread_man",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 95
+      }
+    ],
     "misc": [],
     "water_ambient": [],
     "water_creature": []

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "B": "minecraft:white_dye",
+    "I": "minecraft:yellow_dye",
+    "R": "minecraft:glowstone_dust",
+    "G": "minecraft:glass"
+  },
+  "pattern": [
+    "GGG",
+    "RRR",
+    "IBI"
+  ],
+  "result": {
+    "count": 3,
+    "id": "blazin-christmas-mod:silver_gold_lights"
+  }
+}

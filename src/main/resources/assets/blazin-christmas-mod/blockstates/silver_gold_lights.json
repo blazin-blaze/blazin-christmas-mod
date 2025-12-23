@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "blazin-christmas-mod:block/silver_gold_lights",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "blazin-christmas-mod:block/silver_gold_lights"
+    },
+    "facing=south": {
+      "model": "blazin-christmas-mod:block/silver_gold_lights",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "blazin-christmas-mod:block/silver_gold_lights",
+      "y": 270
+    }
+  }
+}

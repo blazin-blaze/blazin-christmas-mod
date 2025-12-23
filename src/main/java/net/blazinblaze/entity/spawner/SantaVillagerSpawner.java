@@ -29,6 +29,8 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.storage.ServerLevelData;
 import org.jetbrains.annotations.Nullable;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoField;
 import java.util.Optional;
 
 public class SantaVillagerSpawner implements CustomSpawner {
@@ -38,7 +40,14 @@ public class SantaVillagerSpawner implements CustomSpawner {
     @Override
     public void tick(ServerLevel serverLevel, boolean bl, boolean bl2) {
         if(bl & serverLevel.getGameRules().getBoolean(GameRules.RULE_DOMOBSPAWNING)) {
-            this.cooldown--;
+            LocalDate localDate = LocalDate.now();
+            int day = localDate.get(ChronoField.DAY_OF_MONTH);
+            int month = localDate.get(ChronoField.MONTH_OF_YEAR);
+            if(month == 12 && day == 25) {
+                this.cooldown = this.cooldown - 5;
+            }else {
+                this.cooldown--;
+            }
             if(this.cooldown <= 0) {
                 this.cooldown = this.cooldown + 12000 + random.nextInt(1200);
                 long l = serverLevel.getDayTime() / 24000L;

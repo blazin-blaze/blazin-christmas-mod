@@ -83,7 +83,6 @@ public class WitheredSnowballEntity extends ThrowableItemProjectile {
                                 FriendlyElfVex elfVex = BCMEntities.FRIENDLY_ELF_VEX.create(serverLevel, EntitySpawnReason.NATURAL);
                                 elfVex.snapTo(newBlockPos, 0.0F, 0.0F);
                                 elfVex.finalizeSpawn(serverLevel, entity.level().getCurrentDifficultyAt(newBlockPos), EntitySpawnReason.MOB_SUMMONED, null);
-                                elfVex.setOwner((Mob) entity);
                                 elfVex.setBoundOrigin(newBlockPos);
                                 elfVex.setLimitedLifeElf(20 * (30 + entity.getRandom().nextInt(90)));
 
@@ -122,16 +121,34 @@ public class WitheredSnowballEntity extends ThrowableItemProjectile {
                         z = (int) pos.getCenter().z();
                         x = x + i;
                         z = z + i2;
-                        int y = serverLevel.getHeight(Heightmap.Types.WORLD_SURFACE, x, z) - 1;
+                        int y = (int)pos.getCenter().y();
                         BlockState currentState = serverLevel.getBlockState(new BlockPos(x, y, z));
                         if(!currentState.is(BlockTags.AIR)) {
-                            serverLevel.setBlockAndUpdate(new BlockPos(x, y, z), BCMBlocks.FOULED_SNOW.defaultBlockState());
-                            if(random.nextFloat() < 0.05F) {
-                                LivingEntity entity = EntityReference.get(this.owner, this.level(), LivingEntity.class);
-                                if(entity instanceof EvilSantaVillager) {
-                                    BCMEntities.ELF_VEX.spawn(serverLevel, new BlockPos(x,y,z), EntitySpawnReason.NATURAL);
-                                }else {
-                                    BCMEntities.FRIENDLY_ELF_VEX.spawn(serverLevel, new BlockPos(x,y,z), EntitySpawnReason.NATURAL);
+                            BlockPos newBlockPos = new BlockPos(x, y, z);
+                            serverLevel.setBlockAndUpdate(newBlockPos, BCMBlocks.FOULED_SNOW.defaultBlockState());
+                            LivingEntity entity = EntityReference.get(this.owner, this.level(), LivingEntity.class);
+                            if(entity instanceof EvilSantaVillager) {
+                                if(random.nextFloat() < 0.2F) {
+                                    ElfVex elfVex = BCMEntities.ELF_VEX.create(serverLevel, EntitySpawnReason.NATURAL);
+                                    elfVex.snapTo(newBlockPos, 0.0F, 0.0F);
+                                    elfVex.finalizeSpawn(serverLevel, entity.level().getCurrentDifficultyAt(newBlockPos), EntitySpawnReason.MOB_SUMMONED, null);
+                                    elfVex.setOwner((Mob) entity);
+                                    elfVex.setBoundOrigin(newBlockPos);
+                                    elfVex.setLimitedLifeElf(20 * (30 + entity.getRandom().nextInt(90)));
+
+                                    serverLevel.addFreshEntityWithPassengers(elfVex);
+                                    serverLevel.gameEvent(GameEvent.ENTITY_PLACE, newBlockPos, GameEvent.Context.of(entity));
+                                }
+                            }else {
+                                if(random.nextFloat() < 0.05F) {
+                                    FriendlyElfVex elfVex = BCMEntities.FRIENDLY_ELF_VEX.create(serverLevel, EntitySpawnReason.NATURAL);
+                                    elfVex.snapTo(newBlockPos, 0.0F, 0.0F);
+                                    elfVex.finalizeSpawn(serverLevel, entity.level().getCurrentDifficultyAt(newBlockPos), EntitySpawnReason.MOB_SUMMONED, null);
+                                    elfVex.setBoundOrigin(newBlockPos);
+                                    elfVex.setLimitedLifeElf(20 * (30 + entity.getRandom().nextInt(90)));
+
+                                    serverLevel.addFreshEntityWithPassengers(elfVex);
+                                    serverLevel.gameEvent(GameEvent.ENTITY_PLACE, newBlockPos, GameEvent.Context.of(entity));
                                 }
                             }
                             serverLevel.playLocalSound(new BlockPos(x, y, z), SoundEvents.SOUL_SAND_BREAK, SoundSource.BLOCKS, 0.5F, 1.0F, true);

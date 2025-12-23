@@ -1,5 +1,6 @@
 package net.blazinblaze.entity.ai;
 
+import net.blazinblaze.advancement.BCMCriteria;
 import net.blazinblaze.block.BCMBlocks;
 import net.blazinblaze.block.custom.GlassAndPlate;
 import net.blazinblaze.entity.custom.SantaVillager;
@@ -9,6 +10,7 @@ import net.minecraft.core.SectionPos;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.ai.goal.MoveToBlockGoal;
@@ -59,6 +61,9 @@ public class EatCookiesGoal extends MoveToBlockGoal {
             serverLevel.setBlockAndUpdate(blockPos2, BCMBlocks.GLASS_AND_PLATE.defaultBlockState().setValue(GlassAndPlate.FACING, original.getValue(GlassAndPlate.FACING)));
             this.santaVillager.heal(1.5f);
             this.santaVillager.setCookiesEaten(this.santaVillager.getCookiesEaten() + 1);
+            for(ServerPlayer serverPlayer : serverLevel.getPlayers((serverPlayer1) -> true)) {
+                BCMCriteria.SANTA_EAT.trigger(serverPlayer);
+            }
         }
     }
 

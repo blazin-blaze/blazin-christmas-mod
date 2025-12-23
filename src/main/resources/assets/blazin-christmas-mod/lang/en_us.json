@@ -42,6 +42,12 @@
   "block.blazin-christmas-mod.compressed_licorice_slab": "Compressed Licorice Slab",
   "block.blazin-christmas-mod.evil_santa_spawner": "Evil Santa Spawner",
   "block.blazin-christmas-mod.fiery_snow": "Fiery Snow",
+  "block.blazin-christmas-mod.snowman_head": "Snowman Head",
+  "block.blazin-christmas-mod.santa_head": "Santa Head",
+  "block.blazin-christmas-mod.gingerbread_man_head": "Gingerbread Man Head",
+  "block.blazin-christmas-mod.blue_white_lights": "Blue/White Lights",
+  "block.blazin-christmas-mod.red_green_lights": "Red/Green Lights",
+  "block.blazin-christmas-mod.silver_gold_lights": "Silver/Gold Lights",
 
   "entity.blazin-christmas-mod.egg_nog_cow": "Egg Nog Cow",
   "entity.blazin-christmas-mod.elf_vex": "Elf Vex",
@@ -49,6 +55,8 @@
   "entity.blazin-christmas-mod.evil_santa_villager": "Evil Santa",
   "entity.blazin-christmas-mod.santa_villager": "Santa",
   "entity.blazin-christmas-mod.reindeer": "Reindeer",
+  "entity.blazin-christmas-mod.gingerbread_man": "Gingerbread Man",
+  "entity.blazin-christmas-mod.friendly_gingerbread_man": "Gingerbread Man",
 
   "item.blazin-christmas-mod.snowball_patch": "Snowball Patch",
   "item.blazin-christmas-mod.egg_nog_bucket": "Egg Nog Bucket",
@@ -104,6 +112,16 @@
   "item.blazin-christmas-mod.ethereal_snowball": "Ethereal Snowball",
   "item.blazin-christmas-mod.candy_cane_snowball": "Candy Cane Snowball",
   "item.blazin-christmas-mod.snowball_staff": "Snowball Staff",
+  "item.blazin-christmas-mod.snowman_head": "Snowman Head",
+  "item.blazin-christmas-mod.santa_head": "Santa Head",
+  "item.blazin-christmas-mod.gingerbread_man_head": "Gingerbread Man Head",
+  "item.blazin-christmas-mod.snowflake": "Snowflake",
+  "item.blazin-christmas-mod.blue_white_lights": "Blue/White Lights",
+  "item.blazin-christmas-mod.red_green_lights": "Red/Green Lights",
+  "item.blazin-christmas-mod.silver_gold_lights": "Silver/Gold Lights",
+
+  "sound.blazin-christmas-mod.entity-evil_santa_villager-ambient": "Evil Ho ho ho!",
+  "sound.blazin-christmas-mod.entity-santa_villager-ambient": "Ho ho ho!",
 
   "itemGroup.bcm-item-group": "Blazin' Christmas Mod"
 }

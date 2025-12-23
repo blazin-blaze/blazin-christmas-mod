@@ -1,0 +1,25 @@
+{
+  "parent": "blazin-christmas-mod:jollyessence",
+  "criteria": {
+    "north_pole_criterion": {
+      "conditions": {
+        "to": "blazin-christmas-mod:north_pole"
+      },
+      "trigger": "minecraft:changed_dimension"
+    }
+  },
+  "display": {
+    "description": "Visit the North Pole.",
+    "icon": {
+      "count": 1,
+      "id": "blazin-christmas-mod:snowflake"
+    },
+    "title": "Way Up North!"
+  },
+  "requirements": [
+    [
+      "north_pole_criterion"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

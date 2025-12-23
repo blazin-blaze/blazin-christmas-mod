@@ -10,6 +10,8 @@ import net.blazinblaze.data.LastPresentAttachmentData;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.context.ContextKey;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
@@ -103,7 +105,7 @@ public class PresentBlock extends BaseEntityBlock {
                 if(str != null) {
                     presentBlockEntity.setGifterName(str);
                 }
-                if(!isNotEmpty && str == null) {
+                if(!isNotEmpty && (str == null || str.matches("test"))) {
                     player.setAttached(BCMAttachmentTypes.LAST_PRESENT_ATTACHMENT_TYPE, new LastPresentAttachmentData(pos));
                     player.openMenu(presentBlockEntity);
                 }
@@ -115,6 +117,7 @@ public class PresentBlock extends BaseEntityBlock {
     protected InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
         if(player.isShiftKeyDown() && world instanceof ServerLevel) {
             world.setBlockAndUpdate(pos, state.setValue(OPEN, true));
+            player.playNotifySound(SoundEvents.WOOL_BREAK, SoundSource.BLOCKS, 1.0F, 1.0F);
             BlockEntity entity = world.getBlockEntity(pos);
             if(entity instanceof PresentBlockEntity presentBlockEntity) {
                 player.setAttached(BCMAttachmentTypes.LAST_PRESENT_ATTACHMENT_TYPE, new LastPresentAttachmentData(pos));

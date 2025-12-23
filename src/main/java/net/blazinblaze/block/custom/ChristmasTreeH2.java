@@ -5,6 +5,8 @@ import net.blazinblaze.item.BCMItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -170,27 +172,23 @@ public class ChristmasTreeH2 extends Block {
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
         if(player.isShiftKeyDown()) {
-            BlockState stateDown = world.getBlockState(pos.below());
-            if(stateDown.is(BCMBlocks.CHRISTMAS_TREE_H1) && state.getValue(ChristmasTreeH1.NUMBER_OF_PRESENTS).intValue() > 0) {
-
-            }else {
-                boolean greenRed = state.getValue(GREEN_AND_RED).booleanValue();
-                boolean whiteBlue = state.getValue(WHITE_AND_BLUE).booleanValue();
-                boolean silverGold = state.getValue(SILVER_AND_GOLD).booleanValue();
-                if(greenRed) {
-                    player.addItem(BCMItems.RED_GREEN_ORNAMENT.getDefaultInstance().copy());
-                    world.setBlockAndUpdate(pos, state.setValue(WHITE_AND_BLUE, false).setValue(GREEN_AND_RED, false).setValue(SILVER_AND_GOLD, false));
-                    return InteractionResult.SUCCESS;
-                }else if(whiteBlue) {
-                    player.addItem(BCMItems.BLUE_WHITE_ORNAMENT.getDefaultInstance().copy());
-                    world.setBlockAndUpdate(pos, state.setValue(WHITE_AND_BLUE, false).setValue(GREEN_AND_RED, false).setValue(SILVER_AND_GOLD, false));
-                    return InteractionResult.SUCCESS;
-                }else if(silverGold) {
-                    player.addItem(BCMItems.SILVER_GOLD_ORNAMENT.getDefaultInstance().copy());
-                    world.setBlockAndUpdate(pos, state.setValue(WHITE_AND_BLUE, false).setValue(GREEN_AND_RED, false).setValue(SILVER_AND_GOLD, false));
-                    return InteractionResult.SUCCESS;
-                }
+            boolean greenRed = state.getValue(GREEN_AND_RED).booleanValue();
+            boolean whiteBlue = state.getValue(WHITE_AND_BLUE).booleanValue();
+            boolean silverGold = state.getValue(SILVER_AND_GOLD).booleanValue();
+            if(greenRed) {
+                player.addItem(BCMItems.RED_GREEN_ORNAMENT.getDefaultInstance().copy());
+                world.setBlockAndUpdate(pos, state.setValue(WHITE_AND_BLUE, false).setValue(GREEN_AND_RED, false).setValue(SILVER_AND_GOLD, false));
+                return InteractionResult.SUCCESS;
+            }else if(whiteBlue) {
+                player.addItem(BCMItems.BLUE_WHITE_ORNAMENT.getDefaultInstance().copy());
+                world.setBlockAndUpdate(pos, state.setValue(WHITE_AND_BLUE, false).setValue(GREEN_AND_RED, false).setValue(SILVER_AND_GOLD, false));
+                return InteractionResult.SUCCESS;
+            }else if(silverGold) {
+                player.addItem(BCMItems.SILVER_GOLD_ORNAMENT.getDefaultInstance().copy());
+                world.setBlockAndUpdate(pos, state.setValue(WHITE_AND_BLUE, false).setValue(GREEN_AND_RED, false).setValue(SILVER_AND_GOLD, false));
+                return InteractionResult.SUCCESS;
             }
+            player.playNotifySound(SoundEvents.GLASS_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
         }
         if (world instanceof ServerLevel) {
             BlockEntity entity = world.getBlockEntity(pos.below());

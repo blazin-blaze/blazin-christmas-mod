@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "christmas_mod_criterion": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "display": {
+    "background": "blazin-christmas-mod:gui/advancements/backgrounds/bcm_advancements",
+    "description": "This is the start of a jolly journey.",
+    "icon": {
+      "count": 1,
+      "id": "blazin-christmas-mod:wreath"
+    },
+    "title": "Blazin' Christmas Mod"
+  },
+  "requirements": [
+    [
+      "christmas_mod_criterion"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

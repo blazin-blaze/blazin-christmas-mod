@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "blazin-christmas-mod:candy_cane_snowball",
+    "blazin-christmas-mod:candy_cane_snowball",
+    "blazin-christmas-mod:candy_cane_snowball",
+    "blazin-christmas-mod:candy_cane_snowball"
+  ],
+  "result": {
+    "count": 1,
+    "id": "blazin-christmas-mod:candy_cane_snow"
+  }
+}

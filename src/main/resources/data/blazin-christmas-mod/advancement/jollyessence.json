@@ -1,0 +1,29 @@
+{
+  "parent": "blazin-christmas-mod:christmasmod",
+  "criteria": {
+    "jolly_essence_criterion": {
+      "conditions": {
+        "items": [
+          {
+            "items": "blazin-christmas-mod:jolly_essence"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Collect all 3 festive heads and craft a Jolly Essence",
+    "icon": {
+      "count": 1,
+      "id": "blazin-christmas-mod:jolly_essence"
+    },
+    "title": "Jolly Epitome"
+  },
+  "requirements": [
+    [
+      "jolly_essence_criterion"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

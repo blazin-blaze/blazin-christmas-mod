@@ -1,0 +1,23 @@
+{
+  "parent": "blazin-christmas-mod:northpole",
+  "criteria": {
+    "spawned_evil_santa_criterion": {
+      "trigger": "blazin-christmas-mod:spawned_evil_santa_criterion"
+    }
+  },
+  "display": {
+    "description": "Spawn Evil Santa",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "blazin-christmas-mod:evil_santa_spawner"
+    },
+    "title": "Naughty List"
+  },
+  "requirements": [
+    [
+      "spawned_evil_santa_criterion"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

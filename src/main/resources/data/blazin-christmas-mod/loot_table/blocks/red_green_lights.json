@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "blazin-christmas-mod:red_green_lights"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "blazin-christmas-mod:blocks/red_green_lights"
+}

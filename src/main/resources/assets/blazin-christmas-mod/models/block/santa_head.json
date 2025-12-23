@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "down": "blazin-christmas-mod:block/santa_head_bottom",
+    "east": "blazin-christmas-mod:block/santa_head_side",
+    "north": "blazin-christmas-mod:block/santa_head_front",
+    "particle": "blazin-christmas-mod:block/santa_head_side",
+    "south": "blazin-christmas-mod:block/santa_head_side",
+    "up": "blazin-christmas-mod:block/santa_head_top",
+    "west": "blazin-christmas-mod:block/santa_head_side"
+  }
+}

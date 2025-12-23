@@ -10,7 +10,9 @@
       	"AddCustomEntitiesMixin",
 		"SnowballHurtSound",
 		"GlassBottleItem",
-		"ForestRockMixin"
+		"ForestRockMixin",
+		"FestiveHeadsSkeletonMixin",
+		"FestiveHeadsZombieMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

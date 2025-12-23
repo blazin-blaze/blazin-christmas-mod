@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "blazin-christmas-mod:block_of_gingerbread"
+  ],
+  "result": {
+    "count": 9,
+    "id": "blazin-christmas-mod:gingerbread"
+  }
+}

@@ -11,29 +11,32 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageTypes;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.SupportType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.logging.Logger;
 
 public class CandyCaneSnowballEntity extends ThrowableItemProjectile {
+    @Nullable
+    private EntityReference<LivingEntity> owner;
     public CandyCaneSnowballEntity(EntityType<? extends ThrowableItemProjectile> entityType, Level world) {
         super(entityType, world);
     }
 
     public CandyCaneSnowballEntity(Level world, LivingEntity owner, ItemStack stack) {
         super(BCMEntities.CANDY_CANE_SNOWBALL_ENTITY, owner, world, stack);
+        this.owner = new EntityReference<>(owner);
     }
 
     public CandyCaneSnowballEntity(Level world, double x, double y, double z, ItemStack stack) {
@@ -57,8 +60,24 @@ public class CandyCaneSnowballEntity extends ThrowableItemProjectile {
                     int y = (int) pos.getCenter().y() - 1;
                     BlockState currentState = serverLevel.getBlockState(new BlockPos(x, y, z));
                     if(!currentState.is(BlockTags.AIR)) {
-                        BlazinChristmasMod.LOGGER.info(String.format("%s, %s, %s", x, y, z));
-                        serverLevel.setBlockAndUpdate(new BlockPos(x, y, z), BCMBlocks.BLOCK_OF_GINGERBREAD.defaultBlockState());
+                        BlockPos newBlockPos = new BlockPos(x, y, z);
+                        serverLevel.setBlockAndUpdate(newBlockPos, BCMBlocks.BLOCK_OF_GINGERBREAD.defaultBlockState());
+                        LivingEntity entity = EntityReference.get(this.owner, this.level(), LivingEntity.class);
+                        if(entity instanceof EvilSantaVillager) {
+                            if(random.nextFloat() < 0.2F) {
+                                GingerbreadMan gingerbreadMan = BCMEntities.GINGERBREAD_MAN.create(serverLevel, EntitySpawnReason.NATURAL);
+                                gingerbreadMan.snapTo(newBlockPos.above(), 0.0F, 0.0F);
+                                serverLevel.addFreshEntity(gingerbreadMan);
+                                serverLevel.gameEvent(GameEvent.ENTITY_PLACE, newBlockPos, GameEvent.Context.of(entity));
+                            }
+                        }else {
+                            if(random.nextFloat() < 0.05F) {
+                                GingerbreadMan gingerbreadMan = BCMEntities.GINGERBREAD_MAN.create(serverLevel, EntitySpawnReason.NATURAL);
+                                gingerbreadMan.snapTo(newBlockPos.above(), 0.0F, 0.0F);
+                                serverLevel.addFreshEntity(gingerbreadMan);
+                                serverLevel.gameEvent(GameEvent.ENTITY_PLACE, newBlockPos, GameEvent.Context.of(entity));
+                            }
+                        }
                         serverLevel.playLocalSound(new BlockPos(x, y, z), SoundEvents.CROP_BREAK, SoundSource.BLOCKS, 0.5F, 1.0F, true);
                     }
                 }
@@ -87,11 +106,27 @@ public class CandyCaneSnowballEntity extends ThrowableItemProjectile {
                         z = (int) pos.getCenter().z();
                         x = x + i;
                         z = z + i2;
-                        int y = serverLevel.getHeight(Heightmap.Types.WORLD_SURFACE, x, z) - 1;
+                        int y = (int) pos.getCenter().y();
                         BlockState currentState = serverLevel.getBlockState(new BlockPos(x, y, z));
                         if(!currentState.is(BlockTags.AIR)) {
-                            BlazinChristmasMod.LOGGER.info(String.format("%s, %s, %s", x, y, z));
-                            serverLevel.setBlockAndUpdate(new BlockPos(x, y, z), BCMBlocks.BLOCK_OF_GINGERBREAD.defaultBlockState());
+                            BlockPos newBlockPos = new BlockPos(x, y, z);
+                            serverLevel.setBlockAndUpdate(newBlockPos, BCMBlocks.BLOCK_OF_GINGERBREAD.defaultBlockState());
+                            LivingEntity entity = EntityReference.get(this.owner, this.level(), LivingEntity.class);
+                            if(entity instanceof EvilSantaVillager) {
+                                if(random.nextFloat() < 0.2F) {
+                                    GingerbreadMan gingerbreadMan = BCMEntities.GINGERBREAD_MAN.create(serverLevel, EntitySpawnReason.NATURAL);
+                                    gingerbreadMan.snapTo(newBlockPos.above(), 0.0F, 0.0F);
+                                    serverLevel.addFreshEntity(gingerbreadMan);
+                                    serverLevel.gameEvent(GameEvent.ENTITY_PLACE, newBlockPos, GameEvent.Context.of(entity));
+                                }
+                            }else {
+                                if(random.nextFloat() < 0.05F) {
+                                    FriendlyGingerbreadMan gingerbreadMan = BCMEntities.FRIENDLY_GINGERBREAD_MAN.create(serverLevel, EntitySpawnReason.NATURAL);
+                                    gingerbreadMan.snapTo(newBlockPos.above(), 0.0F, 0.0F);
+                                    serverLevel.addFreshEntity(gingerbreadMan);
+                                    serverLevel.gameEvent(GameEvent.ENTITY_PLACE, newBlockPos, GameEvent.Context.of(entity));
+                                }
+                            }
                             serverLevel.playLocalSound(new BlockPos(x, y, z), SoundEvents.CROP_BREAK, SoundSource.BLOCKS, 0.5F, 1.0F, true);
                         }
                     }

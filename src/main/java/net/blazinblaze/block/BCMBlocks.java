@@ -15,13 +15,7 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.item.component.ItemContainerContents;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.CakeBlock;
-import net.minecraft.world.level.block.RotatedPillarBlock;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.MapColor;
@@ -68,7 +62,8 @@ public class BCMBlocks {
                     name.matches("blue_present") ||
                     name.matches("purple_present") ||
                     name.matches("magenta_present") ||
-                    name.matches("pink_present")) {
+                    name.matches("pink_present") ||
+                    name.matches("cyan_present")) {
                 blockItem = new BlockItem(block, new Item.Properties().setId(itemKey).stacksTo(1).component(DataComponents.CONTAINER, ItemContainerContents.EMPTY).component(BCMComponents.PRESENT_SIGNER, "test"));
             }else {
                 blockItem = new BlockItem(block, new Item.Properties().setId(itemKey));
@@ -416,6 +411,42 @@ public class BCMBlocks {
     public static final Block FIERY_SNOW = register("fiery_snow",
             Block::new,
             BlockBehaviour.Properties.of().forceSolidOn().sound(SoundType.NETHERRACK).lightLevel(state -> 5).strength(1.0F).requiresCorrectToolForDrops(),
+            true
+    );
+
+    public static final Block SNOWMAN_HEAD = register("snowman_head",
+            FestiveHead::new,
+            BlockBehaviour.Properties.of().noOcclusion().sound(SoundType.SNOW).strength(1.0F).pushReaction(PushReaction.DESTROY),
+            true
+    );
+
+    public static final Block GINGERBREAD_HEAD = register("gingerbread_man_head",
+            FestiveHead::new,
+            BlockBehaviour.Properties.of().noOcclusion().sound(SoundType.SNOW).strength(1.0F).pushReaction(PushReaction.DESTROY),
+            true
+    );
+
+    public static final Block SANTA_HEAD = register("santa_head",
+            FestiveHead::new,
+            BlockBehaviour.Properties.of().noOcclusion().sound(SoundType.SNOW).strength(1.0F).pushReaction(PushReaction.DESTROY),
+            true
+    );
+
+    public static final Block BLUE_WHITE_LIGHTS = register("blue_white_lights",
+            ChristmasLights::new,
+            BlockBehaviour.Properties.of().noOcclusion().sound(SoundType.GLASS).strength(0.5F).pushReaction(PushReaction.DESTROY).lightLevel(state -> 13),
+            true
+    );
+
+    public static final Block RED_GREEN_LIGHTS = register("red_green_lights",
+            ChristmasLights::new,
+            BlockBehaviour.Properties.of().noOcclusion().sound(SoundType.GLASS).strength(0.5F).pushReaction(PushReaction.DESTROY).lightLevel(state -> 13),
+            true
+    );
+
+    public static final Block SILVER_GOLD_LIGHTS = register("silver_gold_lights",
+            ChristmasLights::new,
+            BlockBehaviour.Properties.of().noOcclusion().sound(SoundType.GLASS).strength(0.5F).pushReaction(PushReaction.DESTROY).lightLevel(state -> 13),
             true
     );
 

@@ -6,6 +6,7 @@ import com.llamalad7.mixinextras.sugar.ref.LocalRef;
 import net.blazinblaze.block.custom.EvilSantaSpawner;
 import net.blazinblaze.entity.spawner.EggNogCowSpawner;
 import net.blazinblaze.entity.spawner.SantaVillagerSpawner;
+import net.blazinblaze.entity.spawner.SnowflakeSpawner;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.progress.ChunkProgressListener;
 import net.minecraft.world.level.CustomSpawner;
@@ -24,6 +25,7 @@ public class AddCustomEntitiesMixin {
         List<CustomSpawner> tempList = new ArrayList<>(list.get());
         tempList.add(new EggNogCowSpawner());
         tempList.add(new SantaVillagerSpawner());
+        tempList.add(new SnowflakeSpawner());
         list.set(ImmutableList.copyOf(tempList));
     }
 }

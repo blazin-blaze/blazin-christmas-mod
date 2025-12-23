@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "down": "minecraft:block/snow",
+    "east": "minecraft:block/snow",
+    "north": "blazin-christmas-mod:block/snowman_head",
+    "particle": "minecraft:block/snow",
+    "south": "minecraft:block/snow",
+    "up": "minecraft:block/snow",
+    "west": "minecraft:block/snow"
+  }
+}

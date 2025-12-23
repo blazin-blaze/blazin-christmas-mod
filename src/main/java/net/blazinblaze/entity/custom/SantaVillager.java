@@ -62,7 +62,7 @@ public class SantaVillager extends PathfinderMob {
                         new UseItemGoal<>(
                                 this,
                                 PotionContents.createItemStack(Items.POTION, Potions.INVISIBILITY),
-                                SoundEvents.WANDERING_TRADER_DISAPPEARED,
+                                SoundEvents.GENERIC_DRINK.value(),
                                 wanderingTrader -> this.level().isDarkOutside() && !wanderingTrader.isInvisible()
                         )
                 );
@@ -72,7 +72,7 @@ public class SantaVillager extends PathfinderMob {
                         new UseItemGoal<>(
                                 this,
                                 new ItemStack(Items.MILK_BUCKET),
-                                SoundEvents.WANDERING_TRADER_REAPPEARED,
+                                SoundEvents.GENERIC_DRINK.value(),
                                 wanderingTrader -> this.level().isBrightOutside() && wanderingTrader.isInvisible()
                         )
                 );
@@ -83,6 +83,7 @@ public class SantaVillager extends PathfinderMob {
         this.goalSelector.addGoal(1, new AvoidEntityGoal(this, Pillager.class, 15.0F, 0.5, 0.5));
         this.goalSelector.addGoal(1, new AvoidEntityGoal(this, Illusioner.class, 12.0F, 0.5, 0.5));
         this.goalSelector.addGoal(1, new AvoidEntityGoal(this, Zoglin.class, 10.0F, 0.5, 0.5));
+        this.goalSelector.addGoal(1, new AvoidEntityGoal(this, EvilSantaVillager.class, 10.0F, 0.5, 0.5));
         this.goalSelector.addGoal(1, new PanicGoal(this, 0.5));
         this.goalSelector.addGoal(2, new WanderToPositionGoal(this, 2.0, 0.35));
         this.goalSelector.addGoal(2, new OpenDoorGoal(this, true));

@@ -1,10 +1,12 @@
 package net.blazinblaze.screen;
 
 import net.blazinblaze.BlazinChristmasMod;
+import net.blazinblaze.advancement.BCMCriteria;
 import net.blazinblaze.block.BCMBlocks;
 import net.blazinblaze.block.custom.PresentBlockEntity;
 import net.blazinblaze.data.BCMAttachmentTypes;
 import net.blazinblaze.data.LastPresentAttachmentData;
+import net.blazinblaze.networking.PresentAdvancementC2SPayload;
 import net.blazinblaze.networking.PresentSignerC2SPayload;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
@@ -139,6 +141,8 @@ public class PresentScreen extends AbstractContainerScreen<PresentHandler> {
 
                 PresentSignerC2SPayload payload = new PresentSignerC2SPayload(this.widget.getValue() != null ? this.widget.getValue() : "test");
                 ClientPlayNetworking.send(payload);
+                PresentAdvancementC2SPayload payload2 = new PresentAdvancementC2SPayload("temp");
+                ClientPlayNetworking.send(payload2);
                 this.hasSetSigner = true;
                 this.onClose();
 

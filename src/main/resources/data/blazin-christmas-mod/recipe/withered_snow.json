@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "blazin-christmas-mod:withered_snowball",
+    "blazin-christmas-mod:withered_snowball",
+    "blazin-christmas-mod:withered_snowball",
+    "blazin-christmas-mod:withered_snowball"
+  ],
+  "result": {
+    "count": 1,
+    "id": "blazin-christmas-mod:withered_snow"
+  }
+}

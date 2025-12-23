@@ -9,6 +9,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Containers;
@@ -184,29 +186,25 @@ public class ChristmasTreeH1 extends BaseEntityBlock {
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level world, BlockPos pos, Player player, BlockHitResult hit) {
         if(player.isShiftKeyDown()) {
-            int numOfPresents = state.getValue(NUMBER_OF_PRESENTS).intValue();
-            if(numOfPresents > 0) {
-
-            }else {
-                BlockState stateUp = world.getBlockState(pos.above());
-                if(stateUp.is(BCMBlocks.CHRISTMAS_TREE_H2)) {
-                    boolean greenRed = stateUp.getValue(ChristmasTreeH2.GREEN_AND_RED).booleanValue();
-                    boolean whiteBlue = stateUp.getValue(ChristmasTreeH2.WHITE_AND_BLUE).booleanValue();
-                    boolean silverGold = stateUp.getValue(ChristmasTreeH2.SILVER_AND_GOLD).booleanValue();
-                    if(greenRed) {
-                        player.addItem(BCMItems.RED_GREEN_ORNAMENT.getDefaultInstance().copy());
-                        world.setBlockAndUpdate(pos.above(), stateUp.setValue(ChristmasTreeH2.WHITE_AND_BLUE, false).setValue(ChristmasTreeH2.GREEN_AND_RED, false).setValue(ChristmasTreeH2.SILVER_AND_GOLD, false));
-                        return InteractionResult.SUCCESS;
-                    }else if(whiteBlue) {
-                        player.addItem(BCMItems.BLUE_WHITE_ORNAMENT.getDefaultInstance().copy());
-                        world.setBlockAndUpdate(pos.above(), stateUp.setValue(ChristmasTreeH2.WHITE_AND_BLUE, false).setValue(ChristmasTreeH2.GREEN_AND_RED, false).setValue(ChristmasTreeH2.SILVER_AND_GOLD, false));
-                        return InteractionResult.SUCCESS;
-                    }else if(silverGold) {
-                        player.addItem(BCMItems.SILVER_GOLD_ORNAMENT.getDefaultInstance().copy());
-                        world.setBlockAndUpdate(pos.above(), stateUp.setValue(ChristmasTreeH2.WHITE_AND_BLUE, false).setValue(ChristmasTreeH2.GREEN_AND_RED, false).setValue(ChristmasTreeH2.SILVER_AND_GOLD, false));
-                        return InteractionResult.SUCCESS;
-                    }
+            BlockState stateUp = world.getBlockState(pos.above());
+            if(stateUp.is(BCMBlocks.CHRISTMAS_TREE_H2)) {
+                boolean greenRed = stateUp.getValue(ChristmasTreeH2.GREEN_AND_RED).booleanValue();
+                boolean whiteBlue = stateUp.getValue(ChristmasTreeH2.WHITE_AND_BLUE).booleanValue();
+                boolean silverGold = stateUp.getValue(ChristmasTreeH2.SILVER_AND_GOLD).booleanValue();
+                if(greenRed) {
+                    player.addItem(BCMItems.RED_GREEN_ORNAMENT.getDefaultInstance().copy());
+                    world.setBlockAndUpdate(pos.above(), stateUp.setValue(ChristmasTreeH2.WHITE_AND_BLUE, false).setValue(ChristmasTreeH2.GREEN_AND_RED, false).setValue(ChristmasTreeH2.SILVER_AND_GOLD, false));
+                    return InteractionResult.SUCCESS;
+                }else if(whiteBlue) {
+                    player.addItem(BCMItems.BLUE_WHITE_ORNAMENT.getDefaultInstance().copy());
+                    world.setBlockAndUpdate(pos.above(), stateUp.setValue(ChristmasTreeH2.WHITE_AND_BLUE, false).setValue(ChristmasTreeH2.GREEN_AND_RED, false).setValue(ChristmasTreeH2.SILVER_AND_GOLD, false));
+                    return InteractionResult.SUCCESS;
+                }else if(silverGold) {
+                    player.addItem(BCMItems.SILVER_GOLD_ORNAMENT.getDefaultInstance().copy());
+                    world.setBlockAndUpdate(pos.above(), stateUp.setValue(ChristmasTreeH2.WHITE_AND_BLUE, false).setValue(ChristmasTreeH2.GREEN_AND_RED, false).setValue(ChristmasTreeH2.SILVER_AND_GOLD, false));
+                    return InteractionResult.SUCCESS;
                 }
+                player.playNotifySound(SoundEvents.GLASS_PLACE, SoundSource.BLOCKS, 1.0F, 1.0F);
             }
         }
         if (world instanceof ServerLevel) {

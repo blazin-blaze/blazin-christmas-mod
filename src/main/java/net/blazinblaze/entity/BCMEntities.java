@@ -37,6 +37,8 @@ public class BCMEntities {
     public static final EntityType<ElfVex> ELF_VEX = register("elf_vex", EntityType.Builder.<ElfVex>of(ElfVex::new, MobCategory.MONSTER).sized(0.6F, 1.95F).fireImmune().sized(0.4F, 0.8F).eyeHeight(0.51875F).passengerAttachments(0.7375F).ridingOffset(0.04F).clientTrackingRange(8));
     public static final EntityType<FriendlyElfVex> FRIENDLY_ELF_VEX = register("friendly_elf_vex", EntityType.Builder.<FriendlyElfVex>of(FriendlyElfVex::new, MobCategory.CREATURE).sized(0.6F, 1.95F).fireImmune().sized(0.4F, 0.8F).eyeHeight(0.51875F).passengerAttachments(0.7375F).ridingOffset(0.04F).clientTrackingRange(8));
     public static final EntityType<Reindeer> REINDEER = register("reindeer", EntityType.Builder.<Reindeer>of(Reindeer::new, MobCategory.CREATURE).sized(0.9F, 1.87F).eyeHeight(1.7765F).passengerAttachments(new Vec3(0.0, 1.37, -0.3)).clientTrackingRange(10));
+    public static final EntityType<GingerbreadMan> GINGERBREAD_MAN = register("gingerbread_man", EntityType.Builder.<GingerbreadMan>of(GingerbreadMan::new, MobCategory.MONSTER).sized(0.6F, 1.95F).eyeHeight(1.74F).passengerAttachments(2.0125F).ridingOffset(-0.7F).clientTrackingRange(8));
+    public static final EntityType<FriendlyGingerbreadMan> FRIENDLY_GINGERBREAD_MAN = register("friendly_gingerbread_man", EntityType.Builder.<FriendlyGingerbreadMan>of(FriendlyGingerbreadMan::new, MobCategory.MONSTER).sized(0.6F, 1.95F).eyeHeight(1.74F).passengerAttachments(2.0125F).ridingOffset(-0.7F).clientTrackingRange(8));
 
     public static final EntityType<FierySnowballEntity> FIERY_SNOWBALL_ENTITY = register("fiery_snowball_entity", EntityType.Builder.<FierySnowballEntity>of(FierySnowballEntity::new, MobCategory.MISC).noLootTable()
             .sized(0.25F, 0.25F)
@@ -62,6 +64,8 @@ public class BCMEntities {
         FabricDefaultAttributeRegistry.register(ELF_VEX, ElfVex.createAttributes());
         FabricDefaultAttributeRegistry.register(FRIENDLY_ELF_VEX, FriendlyElfVex.createAttributes());
         FabricDefaultAttributeRegistry.register(REINDEER, Reindeer.createBaseChestedHorseAttributes());
+        FabricDefaultAttributeRegistry.register(GINGERBREAD_MAN, GingerbreadMan.createAttributes());
+        FabricDefaultAttributeRegistry.register(FRIENDLY_GINGERBREAD_MAN, FriendlyGingerbreadMan.createAttributes());
     }
 
     public static void initializeMobs() {

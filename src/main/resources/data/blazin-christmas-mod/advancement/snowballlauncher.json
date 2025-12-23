@@ -1,0 +1,22 @@
+{
+  "parent": "blazin-christmas-mod:christmasmod",
+  "criteria": {
+    "snowball_launcher_criterion": {
+      "trigger": "blazin-christmas-mod:snowball_launcher_criterion"
+    }
+  },
+  "display": {
+    "description": "Use a Snowball Staff",
+    "icon": {
+      "count": 1,
+      "id": "blazin-christmas-mod:snowball_staff"
+    },
+    "title": "Maximum Snowiciency"
+  },
+  "requirements": [
+    [
+      "snowball_launcher_criterion"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "blazin-christmas-mod:evilsantaspawned",
+  "criteria": {
+    "killed_evil_santa_criterion": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "blazin-christmas-mod:evil_santa_villager"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "description": "Defeat Evil Santa and release the Christmas spirits.",
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "blazin-christmas-mod:evil_santa_spawner"
+    },
+    "title": "Nice List"
+  },
+  "requirements": [
+    [
+      "killed_evil_santa_criterion"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

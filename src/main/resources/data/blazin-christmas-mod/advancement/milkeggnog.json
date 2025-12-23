@@ -1,0 +1,30 @@
+{
+  "parent": "blazin-christmas-mod:christmasmod",
+  "criteria": {
+    "milk_egg_nog_criterion": {
+      "conditions": {
+        "items": [
+          {
+            "items": "blazin-christmas-mod:egg_nog_bucket"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": "Milk an Egg Nog Cow",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "blazin-christmas-mod:egg_nog_bucket"
+    },
+    "title": "Weird Looking Cow..."
+  },
+  "requirements": [
+    [
+      "milk_egg_nog_criterion"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

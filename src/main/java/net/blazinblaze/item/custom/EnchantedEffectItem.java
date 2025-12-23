@@ -3,8 +3,8 @@ package net.blazinblaze.item.custom;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
-public class JollyEssence extends Item {
-    public JollyEssence(Properties settings) {
+public class EnchantedEffectItem extends Item {
+    public EnchantedEffectItem(Properties settings) {
         super(settings);
     }
 

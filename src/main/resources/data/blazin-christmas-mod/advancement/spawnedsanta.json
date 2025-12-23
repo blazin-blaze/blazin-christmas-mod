@@ -1,0 +1,23 @@
+{
+  "parent": "blazin-christmas-mod:christmasmod",
+  "criteria": {
+    "spawned_santa_criterion": {
+      "trigger": "blazin-christmas-mod:spawned_santa_criterion"
+    }
+  },
+  "display": {
+    "description": "Have Santa spawn in your world.",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "blazin-christmas-mod:santa_head"
+    },
+    "title": "Mr. Holly Jolly"
+  },
+  "requirements": [
+    [
+      "spawned_santa_criterion"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

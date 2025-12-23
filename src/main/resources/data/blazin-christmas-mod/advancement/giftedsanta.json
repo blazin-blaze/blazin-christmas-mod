@@ -1,0 +1,23 @@
+{
+  "parent": "blazin-christmas-mod:santaeat",
+  "criteria": {
+    "gifted_santa_criterion": {
+      "trigger": "blazin-christmas-mod:gifted_santa_criterion"
+    }
+  },
+  "display": {
+    "description": "Get a gift from Santa!",
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "blazin-christmas-mod:red_present"
+    },
+    "title": "Merry Christmas!"
+  },
+  "requirements": [
+    [
+      "gifted_santa_criterion"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -93,8 +93,8 @@ public class EtherealSnowballEntity extends ThrowableItemProjectile {
                     x = x + i;
                     z = z + i2;
                     for(int i3 = random.nextInt(1, 2); i3 < 3; i3++) {
-                        y = serverLevel.getHeight(Heightmap.Types.WORLD_SURFACE, x, z);
-                        y = y - 1 + i3;
+                        y = (int) pos.getCenter().y();
+                        y = y + i3;
                         BlockState currentState = serverLevel.getBlockState(new BlockPos(x, y, z));
                         if(!currentState.isSuffocating(this.level(), new BlockPos(x,y,z))) {
                             serverLevel.setBlockAndUpdate(new BlockPos(x, y, z), BCMBlocks.DEPLETABLE_WATER.defaultBlockState());

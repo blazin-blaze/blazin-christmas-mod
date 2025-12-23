@@ -22,6 +22,9 @@ public class BlazinChristmasModClient implements ClientModInitializer {
 		BlockRenderLayerMap.putBlock(BCMBlocks.GLASS_AND_PLATE, ChunkSectionLayer.TRANSLUCENT);
 		BlockRenderLayerMap.putBlock(BCMBlocks.EGG_NOG_AND_COOKIES, ChunkSectionLayer.TRANSLUCENT);
 		BlockRenderLayerMap.putBlock(BCMBlocks.MILK_AND_COOKIES, ChunkSectionLayer.TRANSLUCENT);
+		BlockRenderLayerMap.putBlock(BCMBlocks.BLUE_WHITE_LIGHTS, ChunkSectionLayer.TRANSLUCENT);
+		BlockRenderLayerMap.putBlock(BCMBlocks.SILVER_GOLD_LIGHTS, ChunkSectionLayer.TRANSLUCENT);
+		BlockRenderLayerMap.putBlock(BCMBlocks.RED_GREEN_LIGHTS, ChunkSectionLayer.TRANSLUCENT);
 		BlockRenderLayerMap.putBlock(BCMBlocks.WREATH, ChunkSectionLayer.CUTOUT);
 		BlockRenderLayerMap.putBlock(BCMBlocks.CHRISTMAS_TREE_H1, ChunkSectionLayer.CUTOUT);
 		BlockRenderLayerMap.putBlock(BCMBlocks.CHRISTMAS_TREE_H2, ChunkSectionLayer.CUTOUT);
@@ -33,6 +36,8 @@ public class BlazinChristmasModClient implements ClientModInitializer {
 		EntityRendererRegistry.register(BCMEntities.FRIENDLY_ELF_VEX, FriendlyElfVexRenderer::new);
 		EntityRendererRegistry.register(BCMEntities.EVIL_SANTA_VILLAGER, EvilSantaVillagerRenderer::new);
 		EntityRendererRegistry.register(BCMEntities.REINDEER, ReindeerRenderer::new);
+		EntityRendererRegistry.register(BCMEntities.GINGERBREAD_MAN, GingerbreadManRenderer::new);
+		EntityRendererRegistry.register(BCMEntities.FRIENDLY_GINGERBREAD_MAN, FriendlyGingerbreadManRenderer::new);
 
 		EntityRendererRegistry.register(BCMEntities.ETHEREAL_SNOWBALL_ENTITY, ThrownItemRenderer::new);
 		EntityRendererRegistry.register(BCMEntities.FIERY_SNOWBALL_ENTITY, ThrownItemRenderer::new);

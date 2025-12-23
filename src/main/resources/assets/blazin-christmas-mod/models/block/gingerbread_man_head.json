@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "down": "blazin-christmas-mod:block/gingerbread_man_block_empty",
+    "east": "blazin-christmas-mod:block/gingerbread_man_block_empty",
+    "north": "blazin-christmas-mod:block/gingerbread_man_block",
+    "particle": "blazin-christmas-mod:block/gingerbread_man_block_empty",
+    "south": "blazin-christmas-mod:block/gingerbread_man_block_empty",
+    "up": "blazin-christmas-mod:block/gingerbread_man_block_empty",
+    "west": "blazin-christmas-mod:block/gingerbread_man_block_empty"
+  }
+}

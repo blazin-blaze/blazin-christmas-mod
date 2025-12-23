@@ -1,5 +1,6 @@
 package net.blazinblaze.entity.custom;
 
+import net.blazinblaze.BlazinChristmasMod;
 import net.blazinblaze.data.BCMAttachmentTypes;
 import net.blazinblaze.data.EvilRemovedAttachmentData;
 import net.blazinblaze.entity.BCMEntities;
@@ -68,6 +69,7 @@ public class EvilSantaVillager extends SpellcasterIllager {
         this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, Player.class, 3.0F, 1.0F));
         this.goalSelector.addGoal(10, new LookAtPlayerGoal(this, Mob.class, 8.0F));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, Player.class, true).setUnseenMemoryTicks(300));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, SantaVillager.class, true).setUnseenMemoryTicks(300));
     }
 
     public static AttributeSupplier.Builder createEvilSantaAttributes() {
@@ -270,7 +272,7 @@ public class EvilSantaVillager extends SpellcasterIllager {
 
         @Override
         protected int getCastingInterval() {
-            return 150;
+            return 20*30;
         }
 
         @Override
@@ -308,16 +310,20 @@ public class EvilSantaVillager extends SpellcasterIllager {
     class EvilSantaHealGoal extends SpellcasterIllager.SpellcasterUseSpellGoal {
         @Override
         public boolean canUse() {
-            if (!super.canUse()) {
-                return false;
-            } else {
+            if(EvilSantaVillager.this.isCastingSpell() ? false : EvilSantaVillager.this.tickCount >= this.nextAttackTickCount) {
                 return EvilSantaVillager.this.getHealth() < (EvilSantaVillager.this.getMaxHealth() / 2) && EvilSantaVillager.this.getInvulnerableTicks() <= 0;
             }
+            return false;
+        }
+
+        @Override
+        public boolean canContinueToUse() {
+            return this.attackWarmupDelay > 0;
         }
 
         @Override
         protected int getCastingTime() {
-            return 50;
+            return 40;
         }
 
         @Override
@@ -328,7 +334,7 @@ public class EvilSantaVillager extends SpellcasterIllager {
         @Override
         protected void performSpellCasting() {
             ServerLevel serverLevel = (ServerLevel)EvilSantaVillager.this.level();
-            EvilSantaVillager.this.heal(10 + serverLevel.getRandom().nextFloat()*5);
+            EvilSantaVillager.this.heal(15.0f + serverLevel.getRandom().nextFloat()*5);
         }
 
         @Override

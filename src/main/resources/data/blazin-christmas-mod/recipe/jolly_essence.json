@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "blazin-christmas-mod:ethereal_snow",
+    "blazin-christmas-mod:ethereal_snow",
+    "blazin-christmas-mod:ethereal_snow",
+    "blazin-christmas-mod:ethereal_snow",
+    "blazin-christmas-mod:ethereal_snow",
+    "blazin-christmas-mod:ethereal_snow",
+    "blazin-christmas-mod:santa_head",
+    "blazin-christmas-mod:snowman_head",
+    "blazin-christmas-mod:gingerbread_man_head"
+  ],
+  "result": {
+    "count": 1,
+    "id": "blazin-christmas-mod:jolly_essence"
+  }
+}

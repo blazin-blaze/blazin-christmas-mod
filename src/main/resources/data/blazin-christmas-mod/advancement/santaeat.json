@@ -1,0 +1,23 @@
+{
+  "parent": "blazin-christmas-mod:spawnedsanta",
+  "criteria": {
+    "santa_eat_criterion": {
+      "trigger": "blazin-christmas-mod:santa_eat_criterion"
+    }
+  },
+  "display": {
+    "description": "Give Santa cookies to eat",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "blazin-christmas-mod:milk_and_cookies"
+    },
+    "title": "Yum yum!"
+  },
+  "requirements": [
+    [
+      "santa_eat_criterion"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

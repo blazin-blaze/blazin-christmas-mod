@@ -71,7 +71,7 @@ public class FierySnowballEntity extends ThrowableItemProjectile {
             BlockPos pos = blockHitResult.getBlockPos();
             BlockState state = serverLevel.getBlockState(pos);
             RegistryAccess registryManager = serverLevel.registryAccess();
-            if(!state.is(BlockTags.AIR) && state.isFaceSturdy(serverLevel, pos, blockHitResult.getDirection(), SupportType.FULL)) {
+            if(!state.is(BlockTags.AIR)) {
                 serverLevel.explode(this,
                         new DamageSource(registryManager.lookupOrThrow(Registries.DAMAGE_TYPE).get(DamageTypes.EXPLOSION.location()).get(), new Vec3(pos.getX(), pos.getY(), pos.getZ())),
                         null,
