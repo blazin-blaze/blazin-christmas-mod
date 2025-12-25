@@ -1,7 +1,9 @@
 ![Blazin Christmas Mod](https://cdn.modrinth.com/data/cached_images/aeb08771d473b1c60f37f18415936000edc538f8.png)
 
 # Welcome to the Blazin' Christmas Mod!
-This mod aims to add the Christmas festivites into Minecraft without breaking the immersion of the vanilla game.
+This mod aims to add the Christmas festivities into Minecraft without breaking the immersion of the vanilla game.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/aTem1HG4s_4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### A wide variety of Christmas-themed blocks have been added, including Christmas trees, presents, milk and cookies, eggnog, and more!
 
