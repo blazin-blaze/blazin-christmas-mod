@@ -272,7 +272,7 @@ public class EvilSantaVillager extends SpellcasterIllager {
 
         @Override
         protected int getCastingInterval() {
-            return 20*30;
+            return 20*60;
         }
 
         @Override
@@ -328,7 +328,7 @@ public class EvilSantaVillager extends SpellcasterIllager {
 
         @Override
         protected int getCastingInterval() {
-            return 360;
+            return 1200;
         }
 
         @Override

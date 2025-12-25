@@ -1,9 +1,11 @@
 package net.blazinblaze.entity.custom;
 
+import net.blazinblaze.block.BCMBlocks;
 import net.blazinblaze.entity.BCMEntities;
 import net.blazinblaze.entity.ai.AddPresentsGoal;
 import net.blazinblaze.entity.ai.EatCookiesGoal;
 import net.blazinblaze.entity.ai.OfferPresentGoal;
+import net.blazinblaze.item.BCMItems;
 import net.blazinblaze.sound.BCMSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -12,6 +14,7 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
@@ -19,6 +22,7 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.behavior.FollowTemptation;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.DefendVillageTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
@@ -85,18 +89,19 @@ public class SantaVillager extends PathfinderMob {
         this.goalSelector.addGoal(1, new AvoidEntityGoal(this, Zoglin.class, 10.0F, 0.5, 0.5));
         this.goalSelector.addGoal(1, new AvoidEntityGoal(this, EvilSantaVillager.class, 10.0F, 0.5, 0.5));
         this.goalSelector.addGoal(1, new PanicGoal(this, 0.5));
-        this.goalSelector.addGoal(2, new WanderToPositionGoal(this, 2.0, 0.35));
+        this.goalSelector.addGoal(2, new TemptGoal(this, 1.1, itemStack -> itemStack.is(BCMBlocks.MILK_AND_COOKIES.asItem()) || itemStack.is(BCMBlocks.EGG_NOG_AND_COOKIES.asItem()) || itemStack.is(Items.COOKIE), false));
         this.goalSelector.addGoal(2, new OpenDoorGoal(this, true));
         this.goalSelector.addGoal(3, new AddPresentsGoal(this, 0.5F, 8));
-        this.goalSelector.addGoal(4, new EatCookiesGoal(this, 0.5F, 8));
+        this.goalSelector.addGoal(3, new EatCookiesGoal(this, 0.5F, 8));
         this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 0.35));
         this.goalSelector.addGoal(6, new OfferPresentGoal(this));
+        this.goalSelector.addGoal(7, new WanderToPositionGoal(this, 2.0, 0.35));
         this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 8.0F));
     }
 
     public static AttributeSupplier.Builder createAttributes() {
-        return Mob.createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.5);
+        return Mob.createMobAttributes().add(Attributes.MOVEMENT_SPEED, 0.5).add(Attributes.TEMPT_RANGE, 10.0);
     }
 
     @Override

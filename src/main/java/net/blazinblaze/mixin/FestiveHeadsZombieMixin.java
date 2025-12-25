@@ -30,7 +30,7 @@ public class FestiveHeadsZombieMixin {
             if(month == 12 && day == 25 ? randomSource.nextFloat() < 0.5F : randomSource.nextFloat() < 0.1F) {
                 Block randomFestiveHead = RandomBCMProvider.getRandomFestiveHead();
                 ((Zombie)(Object)this).setItemSlot(EquipmentSlot.HEAD, new ItemStack(randomFestiveHead));
-                ((Zombie)(Object)this).setDropChance(EquipmentSlot.HEAD, 0.1F);
+                ((Zombie)(Object)this).setDropChance(EquipmentSlot.HEAD, 0.7F);
             }
         }
     }

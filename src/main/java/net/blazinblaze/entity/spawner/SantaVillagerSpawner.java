@@ -2,6 +2,7 @@ package net.blazinblaze.entity.spawner;
 
 import net.blazinblaze.data.BCMAttachmentTypes;
 import net.blazinblaze.data.EvilRemovedAttachmentData;
+import net.blazinblaze.data.LastPresentAttachmentData;
 import net.blazinblaze.entity.BCMEntities;
 import net.blazinblaze.entity.custom.Reindeer;
 import net.blazinblaze.entity.custom.SantaVillager;
@@ -39,7 +40,7 @@ public class SantaVillagerSpawner implements CustomSpawner {
 
     @Override
     public void tick(ServerLevel serverLevel, boolean bl, boolean bl2) {
-        if(bl & serverLevel.getGameRules().getBoolean(GameRules.RULE_DOMOBSPAWNING)) {
+        if(bl && serverLevel.getGameRules().getBoolean(GameRules.RULE_DOMOBSPAWNING) && serverLevel.getAttachedOrCreate(BCMAttachmentTypes.EVIL_REMOVED_ATTACHMENT_TYPE, () -> EvilRemovedAttachmentData.DEFAULT).aBoolean()) {
             LocalDate localDate = LocalDate.now();
             int day = localDate.get(ChronoField.DAY_OF_MONTH);
             int month = localDate.get(ChronoField.MONTH_OF_YEAR);
@@ -49,23 +50,21 @@ public class SantaVillagerSpawner implements CustomSpawner {
                 this.cooldown--;
             }
             if(this.cooldown <= 0) {
-                this.cooldown = this.cooldown + 12000 + random.nextInt(1200);
                 long l = serverLevel.getDayTime() / 24000L;
                 if (l >= 5L && serverLevel.isBrightOutside()) {
-                    if (random.nextInt(5) == 0) {
-                        int i = serverLevel.players().size();
-                        if (i >= 1) {
-                            Player player = (Player)serverLevel.players().get(random.nextInt(i));
-                            if (!player.isSpectator()) {
-                                int j = (24 + random.nextInt(24)) * (random.nextBoolean() ? -1 : 1);
-                                int k = (24 + random.nextInt(24)) * (random.nextBoolean() ? -1 : 1);
-                                BlockPos.MutableBlockPos mutableBlockPos = player.blockPosition().mutable().move(j, 0, k);
-                                int m = 10;
-                                if (serverLevel.hasChunksAt(mutableBlockPos.getX() - 10, mutableBlockPos.getZ() - 10, mutableBlockPos.getX() + 10, mutableBlockPos.getZ() + 10)) {
-                                    Holder<Biome> holder = serverLevel.getBiome(mutableBlockPos);
-                                    if (!holder.is(BiomeTags.WITHOUT_WANDERING_TRADER_SPAWNS)) {
-                                        this.spawn(serverLevel);
-                                    }
+                    this.cooldown = this.cooldown + 12000 + random.nextInt(1200);
+                    int i = serverLevel.players().size();
+                    if (i >= 1) {
+                        Player player = (Player)serverLevel.players().get(random.nextInt(i));
+                        if (!player.isSpectator()) {
+                            int j = (24 + random.nextInt(24)) * (random.nextBoolean() ? -1 : 1);
+                            int k = (24 + random.nextInt(24)) * (random.nextBoolean() ? -1 : 1);
+                            BlockPos.MutableBlockPos mutableBlockPos = player.blockPosition().mutable().move(j, 0, k);
+                            int m = 10;
+                            if (serverLevel.hasChunksAt(mutableBlockPos.getX() - 10, mutableBlockPos.getZ() - 10, mutableBlockPos.getX() + 10, mutableBlockPos.getZ() + 10)) {
+                                Holder<Biome> holder = serverLevel.getBiome(mutableBlockPos);
+                                if (!holder.is(BiomeTags.WITHOUT_WANDERING_TRADER_SPAWNS)) {
+                                    this.spawn(serverLevel);
                                 }
                             }
                         }

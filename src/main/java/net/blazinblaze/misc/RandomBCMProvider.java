@@ -169,7 +169,32 @@ public class RandomBCMProvider {
     public static void createRandomSnowballSpiral(LivingEntity entity, ServerLevel serverLevel, double d, double e, double g, double h, boolean allowWaterSnow) {
         String key = getRandomKey(new Random());
 
-        for(int i = 0; i < 30; i++) {
+        if(key.matches("withered") || key.matches("candy_cane")) {
+            for(int i = 0; i < 5; i++) {
+                int delta = i*15;
+                if(key.matches("withered")) {
+                    ItemStack itemStack = new ItemStack(BCMItems.WITHERED_SNOWBALL);
+                    Projectile.spawnProjectile(
+                            new WitheredSnowballEntity(serverLevel, entity, itemStack), serverLevel, itemStack, snowball -> snowball.shoot(Mth.sin((float)d - delta), e + h - snowball.getY(), Mth.sin((float)g - delta), 1.5F, 12.0F)
+                    );
+                }else {
+                    ItemStack itemStack = new ItemStack(BCMItems.CANDY_CANE_SNOWBALL);
+                    Projectile.spawnProjectile(
+                            new CandyCaneSnowballEntity(serverLevel, entity, itemStack), serverLevel, itemStack, snowball -> snowball.shoot(Mth.sin((float)d - delta), e + h - snowball.getY(), Mth.sin((float)g - delta), 1.5F, 12.0F)
+                    );
+                }
+            }
+        }else {
+            for(int i = 0; i < 30; i++) {
+                int delta = i*5;
+                ItemStack itemStack = new ItemStack(BCMItems.FIERY_SNOWBALL);
+                Projectile.spawnProjectile(
+                        new FierySnowballEntity(serverLevel, entity, itemStack), serverLevel, itemStack, snowball -> snowball.shoot(Mth.sin((float)d - delta), e + h - snowball.getY(), Mth.sin((float)g - delta), 1.5F, 12.0F)
+                );
+            }
+        }
+
+        /*/for(int i = 0; i < 30; i++) {
             int delta = i*5;
             if(key.matches("fiery")) {
                 ItemStack itemStack = new ItemStack(BCMItems.FIERY_SNOWBALL);
@@ -194,7 +219,7 @@ public class RandomBCMProvider {
                     );
                 }
             }
-        }
+        }/*/
     }
 
     public static ItemStack getRandomPresentWithoutLoot() {
@@ -326,18 +351,13 @@ public class RandomBCMProvider {
             ItemRarity rarity = LOOT_TABLE.get(itemReference);
             double threshold = rarity.threshold();
 
-            if (ThreadLocalRandom.current().nextDouble() < threshold) {
+            if (numberOfItems == 0 || ThreadLocalRandom.current().nextDouble() < threshold) {
                 boolean multiple = rarity.multiple();
 
                 if (multiple) {
-                    if (ThreadLocalRandom.current().nextDouble() < 0.5) {
-                        item.setCount(random.nextInt(16));
-                        addedItems.add(item);
-                        numberOfItems++;
-                    } else {
-                        addedItems.add(item);
-                        numberOfItems++;
-                    }
+                    item.setCount(random.nextInt(16));
+                    addedItems.add(item);
+                    numberOfItems++;
                 } else {
                     Item stackItem = item.getItem();
                     if (stackItem == Items.POTION) {

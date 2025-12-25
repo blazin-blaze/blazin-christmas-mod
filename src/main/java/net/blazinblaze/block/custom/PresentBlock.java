@@ -142,7 +142,7 @@ public class PresentBlock extends BaseEntityBlock {
     public BlockState playerWillDestroy(Level world, BlockPos pos, BlockState state, Player player) {
         BlockEntity blockEntity = world.getBlockEntity(pos);
         if (blockEntity instanceof PresentBlockEntity presentBlockEntity) {
-            if (!world.isClientSide && player.preventsBlockDrops()) {
+            if (!world.isClientSide) {
                 ItemStack itemStack = getBlockFromColor(this.color);
                 itemStack.applyComponents(blockEntity.collectComponents());
                 itemStack.set(BCMComponents.PRESENT_SIGNER, presentBlockEntity.getGifterName());

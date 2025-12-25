@@ -28,9 +28,9 @@
     "monster": [
       {
         "type": "blazin-christmas-mod:gingerbread_man",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 95
+        "maxCount": 2,
+        "minCount": 2,
+        "weight": 50
       }
     ],
     "misc": [],

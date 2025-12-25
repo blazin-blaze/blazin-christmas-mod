@@ -10,6 +10,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
@@ -65,6 +66,8 @@ public class BCMBlocks {
                     name.matches("pink_present") ||
                     name.matches("cyan_present")) {
                 blockItem = new BlockItem(block, new Item.Properties().setId(itemKey).stacksTo(1).component(DataComponents.CONTAINER, ItemContainerContents.EMPTY).component(BCMComponents.PRESENT_SIGNER, "test"));
+            }else if(name.matches("snowman_head") || name.matches("gingerbread_man_head") || name.matches("santa_head")) {
+                blockItem = new BlockItem(block, new Item.Properties().setId(itemKey).equippable(EquipmentSlot.HEAD));
             }else {
                 blockItem = new BlockItem(block, new Item.Properties().setId(itemKey));
             }

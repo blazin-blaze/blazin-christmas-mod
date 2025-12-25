@@ -30,7 +30,7 @@ public class FestiveHeadsSkeletonMixin {
             if(month == 12 && day == 25 ? randomSource.nextFloat() < 0.5F : randomSource.nextFloat() < 0.1F) {
                 Block randomFestiveHead = RandomBCMProvider.getRandomFestiveHead();
                 ((AbstractSkeleton)(Object)this).setItemSlot(EquipmentSlot.HEAD, new ItemStack(randomFestiveHead));
-                ((AbstractSkeleton)(Object)this).setDropChance(EquipmentSlot.HEAD, 0.1F);
+                ((AbstractSkeleton)(Object)this).setDropChance(EquipmentSlot.HEAD, 0.7F);
             }
         }
     }
